@@ -1,4 +1,4 @@
-#include "Archive.h"
+#include "Archivo.h"
 
 Boolean existeArchivo(const char * nomArchivo) {
     Boolean existe = FALSE;

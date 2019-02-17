@@ -1,5 +1,5 @@
 //
-//  Boolean.hpp
+//  Boolean.h
 //  Obligatorio2-P2
 //
 //  Created by diegomaye on 11/23/18.

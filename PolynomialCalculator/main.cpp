@@ -6,25 +6,28 @@
 //  Copyright © 2019 Code4Business. All rights reserved.
 //
 
-#include "Archive.h"
+#include "Archivo.h"
+#include "Error.h"
+#include "Parser.h"
+#include "ListaStrings.h"
 
 const char* ARCHIVO_EXPEDIENTES = "expedientes.dat";
 const char* ARCHIVO_REVISIONES = "revisiones.dat";
 
 int main() {
     int opcion = NINGUNA;
-    
+
     ABBExpedientes expedientes;
     ListaRevisiones revisiones;
-    
+
     crear(expedientes);
     cargarRevisiones(revisiones);
-    
+
     if(existeArchivo(ARCHIVO_EXPEDIENTES))
         levantarExpedientes(expedientes, ARCHIVO_EXPEDIENTES);
     if(existeArchivo(ARCHIVO_REVISIONES))
         levantarRevisiones(revisiones, ARCHIVO_REVISIONES);
-    
+
     while(opcion != OPCION_SALIDA){
         switch (opcion) {
             case REGISTRAR_EXPEDIENTE:
@@ -62,8 +65,8 @@ int main() {
                 break;
         }
     }
-    
+
     bajarRevisiones(revisiones, ARCHIVO_REVISIONES);
     bajarExpedientes(expedientes, ARCHIVO_EXPEDIENTES);
-    
+
 }

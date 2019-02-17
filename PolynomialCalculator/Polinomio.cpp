@@ -6,4 +6,4 @@
 //  Copyright © 2019 Code4Business. All rights reserved.
 //
 
-#include "Polinomio.hpp"
+#include "Polinomio.h"

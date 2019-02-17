@@ -1,6 +1,6 @@
 #ifndef ARCHIVOS_H_INCLUDED
 #define ARCHIVOS_H_INCLUDED
-#include "Menu.h"
+#include "String.h"
 
 Boolean existeArchivo(const char * nomArchivo);
 FILE * crearArchivo(const char * nomArchivo);

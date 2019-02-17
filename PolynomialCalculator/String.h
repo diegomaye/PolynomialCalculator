@@ -1,5 +1,5 @@
 //
-//  String.hpp
+//  String.h
 //  Obligatorio2-P2
 //
 //  Created by diegomaye on 11/23/18.
@@ -49,5 +49,5 @@ void toString(String s, FILE * f);
 void fromString(String &s, FILE * f);
 /*dado un archivo y un string pasado por valor, carga en el string el contenido del archivo*/
 
-#endif /* String_hpp */
+#endif /* String_h */
 

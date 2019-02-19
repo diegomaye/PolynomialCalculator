@@ -1,12 +1,15 @@
 # PolynomialCalculator
-## Taller de programacion UDE.
+
+Sistema de software que permite realizar operaciones basicas con polinomios de coeficientes enteros. La aplicación permite definir polinomios con coeficientes enteros y ejecutar un conjunto de funcionalidades sobre ellos, entre ellas operaciones que permitan chequear raíces enteras y evaluar un polinomio en un valor entero dado, así como otras operaciones adicionales.
+
+## Como clonar y crear issues sobre el proyecto.
 
 Para bajar el proyecto:
 ```
-git clone https://github.com/diegomaye/Obligatorio2-P2.git
+git clone https://github.com/diegomaye/PolynomialCalculator.git
 ```
 
-Para implementar un issue, crear un branch:
+Para implementar un issue o crear un branch:
 ```
 git checkout -b [nombre_branch_para_issue]
 ```
@@ -24,9 +27,9 @@ Digrama de modulos del sistema:
 
 ## Planteo del Problema
 
-* Se desea desarrollar un sistema de software que permita a estudiantes de bachillerato trabajar con polinomios con coeficientes enteros. La aplicación permitirá definir polinomios con coeficientes enteros por parte del estudiante y ejecutar de un conjunto de funcionalidades sobre ellos, destacándose principalmente las operaciones que permiten chequear raíces enteras y evaluar un polinomio en un valor entero dado, así como otras operaciones adicionales.
-* Si bien la cantidad de polinomios que se manejarán en memoria será finita, el sistema deberá permitir tener en memoria tantos polinomios como se desee. Además, no existirá cota para el grado de cada polinomio. Es decir, cada polinomio podrá ser de cualquier grado.
-* Para interactuar con la aplicación, el usuario digitará una serie de comandos por teclado que le indicarán al programa las diferentes acciones a realizar. El programa deberá interpretar el comando ingresado por el usuario y luego realizar la acción correspondiente. Los comandos disponibles son los siguientes:
+ Se desea desarrollar un sistema de software que permita a estudiantes de bachillerato trabajar con polinomios con coeficientes enteros. La aplicación permitirá definir polinomios con coeficientes enteros por parte del estudiante y ejecutar de un conjunto de funcionalidades sobre ellos, destacándose principalmente las operaciones que permiten chequear raíces enteras y evaluar un polinomio en un valor entero dado, así como otras operaciones adicionales.
+ Si bien la cantidad de polinomios que se manejarán en memoria será finita, el sistema deberá permitir tener en memoria tantos polinomios como se desee. Además, no existirá cota para el grado de cada polinomio. Es decir, cada polinomio podrá ser de cualquier grado.
+ Para interactuar con la aplicación, el usuario digitará una serie de comandos por teclado que le indicarán al programa las diferentes acciones a realizar. El programa deberá interpretar el comando ingresado por el usuario y luego realizar la acción correspondiente. Los comandos disponibles son los siguientes:
 
 ### Funciones Principale
 

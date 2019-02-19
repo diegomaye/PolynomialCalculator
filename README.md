@@ -1,5 +1,5 @@
 # PolynomialCalculator
-Taller de programacion UDE.
+## Taller de programacion UDE.
 
 Para bajar el proyecto:
 ```
@@ -39,7 +39,7 @@ Digrama de modulos del sistema:
 * recuperar: recupera a memoria un polinomio previamente guardado en archivo
 * salir: abandona la aplicación
 
-### Ejemplos de Ejecucion
+## Ejemplos de Ejecucion
 
 ## Ejempo 1
 ```console

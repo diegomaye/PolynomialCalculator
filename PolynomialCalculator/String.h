@@ -10,6 +10,7 @@
 #define String_h
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "Boolean.h"
 
 const int MAX = 80;
@@ -42,6 +43,15 @@ void strcon(String &s1, String s2);
 /*concatena el segundo al final del primero*/
 void strswp(String &s1, String &s2);
 /*intercambia ambos string*/
+Boolean esAlfanumerico(String s);
+/*devuelve true si el string es alfanumérico*/
+Boolean esNumerico(String s);
+/*devuelve true si el string es numérico*/
+int convertirANumero(String s);
+/*devuelve int con el valor del string*/
+Boolean validarExtension(String nombreArchivo);
+/*devuelve true si el nombre y la extensión son correctos*/
+
 
 //Almacenamiento
 void toString(String s, FILE * f);

@@ -32,6 +32,28 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Archivo.cpp" />
+		<Unit filename="Archivo.h" />
+		<Unit filename="Boolean.cpp" />
+		<Unit filename="Boolean.h" />
+		<Unit filename="Error.cpp" />
+		<Unit filename="Error.h" />
+		<Unit filename="ListaStrings.cpp" />
+		<Unit filename="ListaStrings.h" />
+		<Unit filename="Parser.cpp" />
+		<Unit filename="Parser.h" />
+		<Unit filename="Polinomio.cpp" />
+		<Unit filename="Polinomio.h" />
+		<Unit filename="Polinomios.cpp" />
+		<Unit filename="Polinomios.h" />
+		<Unit filename="Pruebas.cpp" />
+		<Unit filename="Pruebas.h" />
+		<Unit filename="String.cpp" />
+		<Unit filename="String.h" />
+		<Unit filename="Termino.cpp" />
+		<Unit filename="Termino.h" />
+		<Unit filename="Terminos.cpp" />
+		<Unit filename="Terminos.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

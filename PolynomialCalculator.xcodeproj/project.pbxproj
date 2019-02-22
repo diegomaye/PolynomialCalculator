@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D76D4FB221F8C970046D5BA /* Pruebas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F6221F8C970046D5BA /* Pruebas.cpp */; };
+		2D76D4FC221F8C970046D5BA /* Archivo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F7221F8C970046D5BA /* Archivo.cpp */; };
+		2D76D4FD221F8C970046D5BA /* ListaStrings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F8221F8C970046D5BA /* ListaStrings.cpp */; };
 		2D7DDE4222166B2D00085B8F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE4122166B2D00085B8F /* main.cpp */; };
 		2D7DDE4A22166DFB00085B8F /* Boolean.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE4822166DFB00085B8F /* Boolean.cpp */; };
 		2D7DDE5022166EC200085B8F /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE4E22166EC200085B8F /* String.cpp */; };
-		2D7DDE5122166EC200085B8F /* Archive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE4F22166EC200085B8F /* Archive.cpp */; };
 		2D7DDE5822166FC600085B8F /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE5622166FC600085B8F /* Parser.cpp */; };
 		2D7DDE5C22166FDD00085B8F /* Error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE5A22166FDD00085B8F /* Error.cpp */; };
-		2D7DDE5F2216708D00085B8F /* StringList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE5D2216708D00085B8F /* StringList.cpp */; };
 		2D7DDE6E221671CD00085B8F /* Polinomio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE6C221671CD00085B8F /* Polinomio.cpp */; };
 		2D7DDE71221671DB00085B8F /* Termino.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE6F221671DB00085B8F /* Termino.cpp */; };
 		2D7DDE74221671E800085B8F /* Terminos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE72221671E800085B8F /* Terminos.cpp */; };
@@ -33,20 +34,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D76D4F5221F8C970046D5BA /* Pruebas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pruebas.h; sourceTree = "<group>"; };
+		2D76D4F6221F8C970046D5BA /* Pruebas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pruebas.cpp; sourceTree = "<group>"; };
+		2D76D4F7221F8C970046D5BA /* Archivo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Archivo.cpp; sourceTree = "<group>"; };
+		2D76D4F8221F8C970046D5BA /* ListaStrings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListaStrings.cpp; sourceTree = "<group>"; };
+		2D76D4F9221F8C970046D5BA /* ListaStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaStrings.h; sourceTree = "<group>"; };
+		2D76D4FA221F8C970046D5BA /* Archivo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Archivo.h; sourceTree = "<group>"; };
 		2D7DDE3E22166B2D00085B8F /* PolynomialCalculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PolynomialCalculator; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D7DDE4122166B2D00085B8F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2D7DDE4822166DFB00085B8F /* Boolean.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Boolean.cpp; sourceTree = "<group>"; };
-		2D7DDE4B22166EC200085B8F /* Archive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Archive.h; sourceTree = "<group>"; };
 		2D7DDE4C22166EC200085B8F /* Boolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boolean.h; sourceTree = "<group>"; };
 		2D7DDE4D22166EC200085B8F /* String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
 		2D7DDE4E22166EC200085B8F /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
-		2D7DDE4F22166EC200085B8F /* Archive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Archive.cpp; sourceTree = "<group>"; };
 		2D7DDE5622166FC600085B8F /* Parser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
 		2D7DDE5722166FC600085B8F /* Parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		2D7DDE5A22166FDD00085B8F /* Error.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Error.cpp; sourceTree = "<group>"; };
 		2D7DDE5B22166FDD00085B8F /* Error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Error.h; sourceTree = "<group>"; };
-		2D7DDE5D2216708D00085B8F /* StringList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StringList.cpp; sourceTree = "<group>"; };
-		2D7DDE5E2216708D00085B8F /* StringList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StringList.hpp; sourceTree = "<group>"; };
 		2D7DDE6C221671CD00085B8F /* Polinomio.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Polinomio.cpp; sourceTree = "<group>"; };
 		2D7DDE6D221671CD00085B8F /* Polinomio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Polinomio.h; sourceTree = "<group>"; };
 		2D7DDE6F221671DB00085B8F /* Termino.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Termino.cpp; sourceTree = "<group>"; };
@@ -68,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D76D4FE221F8CD00046D5BA /* Pruebas */ = {
+			isa = PBXGroup;
+			children = (
+				2D76D4F6221F8C970046D5BA /* Pruebas.cpp */,
+				2D76D4F5221F8C970046D5BA /* Pruebas.h */,
+			);
+			name = Pruebas;
+			sourceTree = "<group>";
+		};
 		2D7DDE3522166B2D00085B8F = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +99,7 @@
 		2D7DDE4022166B2D00085B8F /* PolynomialCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				2D76D4FE221F8CD00046D5BA /* Pruebas */,
 				2D7DDE5522166F8C00085B8F /* Modules */,
 				2D7DDE5422166F6600085B8F /* Basic */,
 				2D7DDE5322166F3E00085B8F /* Main */,
@@ -97,8 +110,8 @@
 		2D7DDE5322166F3E00085B8F /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				2D7DDE4F22166EC200085B8F /* Archive.cpp */,
-				2D7DDE4B22166EC200085B8F /* Archive.h */,
+				2D76D4F7221F8C970046D5BA /* Archivo.cpp */,
+				2D76D4FA221F8C970046D5BA /* Archivo.h */,
 				2D7DDE4122166B2D00085B8F /* main.cpp */,
 			);
 			name = Main;
@@ -107,12 +120,12 @@
 		2D7DDE5422166F6600085B8F /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				2D7DDE4822166DFB00085B8F /* Boolean.cpp */,
-				2D7DDE4C22166EC200085B8F /* Boolean.h */,
+				2D76D4F8221F8C970046D5BA /* ListaStrings.cpp */,
+				2D76D4F9221F8C970046D5BA /* ListaStrings.h */,
 				2D7DDE4E22166EC200085B8F /* String.cpp */,
 				2D7DDE4D22166EC200085B8F /* String.h */,
-				2D7DDE5D2216708D00085B8F /* StringList.cpp */,
-				2D7DDE5E2216708D00085B8F /* StringList.hpp */,
+				2D7DDE4822166DFB00085B8F /* Boolean.cpp */,
+				2D7DDE4C22166EC200085B8F /* Boolean.h */,
 			);
 			name = Basic;
 			sourceTree = "<group>";
@@ -193,14 +206,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D7DDE5C22166FDD00085B8F /* Error.cpp in Sources */,
-				2D7DDE5122166EC200085B8F /* Archive.cpp in Sources */,
-				2D7DDE5F2216708D00085B8F /* StringList.cpp in Sources */,
 				2D7DDE4A22166DFB00085B8F /* Boolean.cpp in Sources */,
 				2D7DDE77221671FD00085B8F /* Polinomios.cpp in Sources */,
 				2D7DDE6E221671CD00085B8F /* Polinomio.cpp in Sources */,
+				2D76D4FB221F8C970046D5BA /* Pruebas.cpp in Sources */,
 				2D7DDE5022166EC200085B8F /* String.cpp in Sources */,
+				2D76D4FD221F8C970046D5BA /* ListaStrings.cpp in Sources */,
 				2D7DDE5822166FC600085B8F /* Parser.cpp in Sources */,
 				2D7DDE4222166B2D00085B8F /* main.cpp in Sources */,
+				2D76D4FC221F8C970046D5BA /* Archivo.cpp in Sources */,
 				2D7DDE74221671E800085B8F /* Terminos.cpp in Sources */,
 				2D7DDE71221671DB00085B8F /* Termino.cpp in Sources */,
 			);

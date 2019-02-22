@@ -194,3 +194,42 @@ void fromString(String &s, FILE * f){
     strcop (s, aux);
     delete [] aux;
 }
+Boolean esAlfanumerico(String s)
+{
+    int i=0;
+    Boolean resultado=TRUE;
+
+    while(s[i] != '\0' && resultado)
+    {
+        if(((s[i] >= 'a')&&(s[i]<='z'))||((s[i] >= 'A')&&(s[i]<='Z'))||((s[i]>='0')&&(s[i]<='9')))
+         {
+            i++;
+         }
+        else
+        {
+            resultado=FALSE;
+        }
+    }
+    return resultado;
+}
+
+Boolean esNumerico(String s)
+{
+    int i=0;
+    Boolean resultado=TRUE;
+    while(s[i]!='\0' && resultado)
+    {
+        if((s[i]>='0')&&(s[i]<='9'))
+            i++;
+        else
+            resultado=FALSE;
+    }
+    return resultado;
+}
+
+int convertirANumero(String s)
+{
+    int num=atoi(s);
+    return num;
+
+}

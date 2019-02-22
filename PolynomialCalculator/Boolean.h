@@ -13,6 +13,4 @@
 
 typedef enum {FALSE, TRUE} Boolean;
 
-
-
 #endif /* Boolean_h */

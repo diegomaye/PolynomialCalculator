@@ -10,5 +10,13 @@
 #define Terminos_h
 
 #include <stdio.h>
+#include "Termino.h"
+
+typedef struct nodo_termino {
+    Termino termino;
+    nodo_termino * sig;
+} NodoTermino;
+
+typedef NodoTermino * ListaTerminos;
 
 #endif /* Terminos_h */

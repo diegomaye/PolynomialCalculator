@@ -234,7 +234,7 @@ int convertirANumero(String s)
 
 }
 
-Boolean validarExtension(String nombreArchivo) {
+Boolean validarExtension(String nombreArchivo) {//ojo si nombre archivo tiene mas de un punto.
     Boolean resultado = FALSE;
     String nombre = new char[MAX];
     int i = 0;

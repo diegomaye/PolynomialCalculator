@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D76D4FB221F8C970046D5BA /* Pruebas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F6221F8C970046D5BA /* Pruebas.cpp */; };
+		2D12335B2220E59900F7EC15 /* TestError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D1233592220E59900F7EC15 /* TestError.cpp */; };
+		2D12335E2220EB9E00F7EC15 /* TestTermino.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D12335C2220EB9E00F7EC15 /* TestTermino.cpp */; };
+		2D76D4FB221F8C970046D5BA /* TestMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F6221F8C970046D5BA /* TestMain.cpp */; };
 		2D76D4FC221F8C970046D5BA /* Archivo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F7221F8C970046D5BA /* Archivo.cpp */; };
 		2D76D4FD221F8C970046D5BA /* ListaStrings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F8221F8C970046D5BA /* ListaStrings.cpp */; };
 		2D7DDE4222166B2D00085B8F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE4122166B2D00085B8F /* main.cpp */; };
@@ -34,8 +36,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2D76D4F5221F8C970046D5BA /* Pruebas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pruebas.h; sourceTree = "<group>"; };
-		2D76D4F6221F8C970046D5BA /* Pruebas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pruebas.cpp; sourceTree = "<group>"; };
+		2D1233592220E59900F7EC15 /* TestError.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestError.cpp; sourceTree = "<group>"; };
+		2D12335A2220E59900F7EC15 /* TestError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestError.h; sourceTree = "<group>"; };
+		2D12335C2220EB9E00F7EC15 /* TestTermino.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestTermino.cpp; sourceTree = "<group>"; };
+		2D12335D2220EB9E00F7EC15 /* TestTermino.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTermino.h; sourceTree = "<group>"; };
+		2D76D4F6221F8C970046D5BA /* TestMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMain.cpp; sourceTree = "<group>"; };
 		2D76D4F7221F8C970046D5BA /* Archivo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Archivo.cpp; sourceTree = "<group>"; };
 		2D76D4F8221F8C970046D5BA /* ListaStrings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListaStrings.cpp; sourceTree = "<group>"; };
 		2D76D4F9221F8C970046D5BA /* ListaStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaStrings.h; sourceTree = "<group>"; };
@@ -74,8 +79,11 @@
 		2D76D4FE221F8CD00046D5BA /* Pruebas */ = {
 			isa = PBXGroup;
 			children = (
-				2D76D4F6221F8C970046D5BA /* Pruebas.cpp */,
-				2D76D4F5221F8C970046D5BA /* Pruebas.h */,
+				2D76D4F6221F8C970046D5BA /* TestMain.cpp */,
+				2D1233592220E59900F7EC15 /* TestError.cpp */,
+				2D12335A2220E59900F7EC15 /* TestError.h */,
+				2D12335C2220EB9E00F7EC15 /* TestTermino.cpp */,
+				2D12335D2220EB9E00F7EC15 /* TestTermino.h */,
 			);
 			name = Pruebas;
 			sourceTree = "<group>";
@@ -209,12 +217,14 @@
 				2D7DDE4A22166DFB00085B8F /* Boolean.cpp in Sources */,
 				2D7DDE77221671FD00085B8F /* Polinomios.cpp in Sources */,
 				2D7DDE6E221671CD00085B8F /* Polinomio.cpp in Sources */,
-				2D76D4FB221F8C970046D5BA /* Pruebas.cpp in Sources */,
+				2D12335E2220EB9E00F7EC15 /* TestTermino.cpp in Sources */,
+				2D76D4FB221F8C970046D5BA /* TestMain.cpp in Sources */,
 				2D7DDE5022166EC200085B8F /* String.cpp in Sources */,
 				2D76D4FD221F8C970046D5BA /* ListaStrings.cpp in Sources */,
 				2D7DDE5822166FC600085B8F /* Parser.cpp in Sources */,
 				2D7DDE4222166B2D00085B8F /* main.cpp in Sources */,
 				2D76D4FC221F8C970046D5BA /* Archivo.cpp in Sources */,
+				2D12335B2220E59900F7EC15 /* TestError.cpp in Sources */,
 				2D7DDE74221671E800085B8F /* Terminos.cpp in Sources */,
 				2D7DDE71221671DB00085B8F /* Termino.cpp in Sources */,
 			);

@@ -9,14 +9,28 @@
 #include "Termino.h"
 
 void mostrarTermino(Termino termino){
-    /* controlar cosas con varios if:
-     ejemplo: si el coeficiente es 1, no se muestra
-     si es -1, se muestra - pero no el 1
-     si es mayor que cero, mostrar expresamente el +
-     si el grado es 0, solo se muestra el coeficiente
-     etc */
-    
-    printf("%dx^%d", termino.coeficiente, termino.exponente);
+    if(termino.exponente == 0){
+        if(termino.coeficiente != 0){
+            if(termino.coeficiente < 0){
+                printf("%d", termino.coeficiente);//MARK: suponemos remplaza el %d por numero negativo con el "-"
+            }
+            else{
+                printf("+%d", termino.coeficiente);
+            }
+        }
+    }
+    else{
+        if(termino.coeficiente != 0){
+            if(termino.coeficiente == -1)
+                printf("-x^%d", termino.exponente);
+            else if(termino.coeficiente == 1)
+                printf("+x^%d", termino.exponente);
+            else if(termino.coeficiente < 0)
+                printf("%dx^%d", termino.coeficiente, termino.exponente);//MARK: idem, anterior suponemos remplaza el %d por numero negativo con el "-"
+            else
+                printf("+%dx^%d", termino.coeficiente, termino.exponente);
+        }
+    }
 }
 
 int darCoeficienteTermino(Termino termino){
@@ -51,7 +65,6 @@ void multiplicarTerminos(Termino termino1, Termino termino2, Termino &termino1Re
 }
 
 int evaluarTermino(Termino termino, int valor){
-    // ojo con esta cuenta
     return termino.coeficiente * pow(valor, termino.exponente);
 }
 void bajarTermino(Termino termino, FILE * f){

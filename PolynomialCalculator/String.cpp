@@ -132,6 +132,12 @@ void printSpaces(int espacio)
         printf(" ");
 }
 
+void printEnter()
+{
+    printf("%c",'\n');
+}
+
+
 Boolean strmen(String s1,String s2)
 {
     Boolean resu;

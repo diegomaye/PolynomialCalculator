@@ -4,5 +4,4 @@
 
 void pruebaString ();
 
-
 #endif // PRUEBAS_H_INCLUDED

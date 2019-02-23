@@ -30,7 +30,8 @@ typedef enum {
     POLINOMIO_NO_EXISTENTE_EN_MEMORIA,
     FORMATO_ARCHIVO_INCORRECTO,
     NOMBRE_EXTENSION_INCORRECTO,
-    EXISTE_ARCHIVO,NO_EXISTE_ARCHIVO
+    EXISTE_ARCHIVO,
+    NO_EXISTE_ARCHIVO
 } Error;
 
 typedef struct { Error value; char * descripcion; } Mensaje;

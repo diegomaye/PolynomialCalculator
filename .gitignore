@@ -31,7 +31,7 @@
 *.out
 *.app
 PolynomialCalculator/PolynomialCalculator.layout
+PolynomialCalculator/PolynomialCalculator.cbp
+PolynomialCalculator/PolynomialCalculator.depend
+
 .DS_Store
-PolynomialCalculator.xcodeproj/project.pbxproj
-PolynomialCalculator.xcodeproj/project.xcworkspace/xcuserdata/diegomaye.xcuserdatad/UserInterfaceState.xcuserstate
-PolynomialCalculator/.DS_Store

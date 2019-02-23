@@ -30,6 +30,8 @@
 *.exe
 *.out
 *.app
+PolynomialCalculator/PolynomialCalculator.cbp
+PolynomialCalculator/PolynomialCalculator.depend
 PolynomialCalculator/PolynomialCalculator.layout
 PolynomialCalculator.xcodeproj/project.xcworkspace/xcuserdata/diegomaye.xcuserdatad/UserInterfaceState.xcuserstate
 PolynomialCalculator.xcodeproj/project.xcworkspace/xcuserdata/diegomaye.xcuserdatad/UserInterfaceState.xcuserstate

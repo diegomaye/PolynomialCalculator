@@ -31,6 +31,8 @@ void printIn(String s, int espacio);
 /*despliega un string con espacion al final*/
 void printSpaces(int espacio);
 /*imprime espacios*/
+void printEnter();
+/*imprime saltos de linea*/
 void scan(String &s);
 /*carga el string por teclado*/
 Boolean strmen(String s1, String s2);

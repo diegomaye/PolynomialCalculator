@@ -12,7 +12,6 @@
 		2D76D4FB221F8C970046D5BA /* TestMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F6221F8C970046D5BA /* TestMain.cpp */; };
 		2D76D4FC221F8C970046D5BA /* Archivo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F7221F8C970046D5BA /* Archivo.cpp */; };
 		2D76D4FD221F8C970046D5BA /* ListaStrings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F8221F8C970046D5BA /* ListaStrings.cpp */; };
-		2D7DDE4222166B2D00085B8F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE4122166B2D00085B8F /* main.cpp */; };
 		2D7DDE4A22166DFB00085B8F /* Boolean.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE4822166DFB00085B8F /* Boolean.cpp */; };
 		2D7DDE5022166EC200085B8F /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE4E22166EC200085B8F /* String.cpp */; };
 		2D7DDE5822166FC600085B8F /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DDE5622166FC600085B8F /* Parser.cpp */; };
@@ -222,7 +221,6 @@
 				2D7DDE5022166EC200085B8F /* String.cpp in Sources */,
 				2D76D4FD221F8C970046D5BA /* ListaStrings.cpp in Sources */,
 				2D7DDE5822166FC600085B8F /* Parser.cpp in Sources */,
-				2D7DDE4222166B2D00085B8F /* main.cpp in Sources */,
 				2D76D4FC221F8C970046D5BA /* Archivo.cpp in Sources */,
 				2D12335B2220E59900F7EC15 /* TestError.cpp in Sources */,
 				2D7DDE74221671E800085B8F /* Terminos.cpp in Sources */,

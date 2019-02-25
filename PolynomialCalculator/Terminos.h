@@ -20,15 +20,18 @@ typedef struct nodo_termino {
 
 typedef NodoTermino * ListaTerminos;
 
-void insertarTermino(ListaTerminos &lstTerminos, Termino termino);
+void mostrarTerminos(ListaTerminos terminos);
+/*Muestra todos los termions del polinomio por consola, ordenados en forma descendente por exponente.*/
+void insertarTermino(ListaTerminos &terminos, Termino termino);
 /*Ingresa un término a la lista de términos - se inserta ordenado por grado, de mayor a menor - es un procedimiento recursivo*/
-
-//LISTADOS Y CONSULTAS
-void listarTerminos(ListaTerminos lstTerminos);
-/*Listar todos los términos realizadas, ordenados de exponente mayor a menor*/
-int contarTerminos(ListaTerminos lstTerminos);
+/*PRECONDICION: El termino a ser ingresado tiene un grado que no existe en la lista de terminos*/
+void insBack(ListaTerminos &terminos, Termino termino);
+/*inserta un termino al final de la lista*/
+Boolean existeGrado(ListaTerminos &terminos, Termino termino);
+/*devuelve true si ese grado ya existe en la lista*/
+int contarTerminos(ListaTerminos terminos);
 //Devuelve la cantidad de términos de la lista dada
-void borrarTerminos(ListaTerminos &terminos, int exponente);
+void borrarTermino(ListaTerminos &terminos, int exponente);
 //Dado un grado, borra los términos en ese grado
 /*PRECONDICION: La lista de terminos no puede estar vacía */
 Termino primerTermino(ListaTerminos terminos);
@@ -47,12 +50,13 @@ Boolean esRaizTerminos(ListaTerminos terminos, int raiz);
 
 Termino ultimaTerminoAgregado(ListaTerminos terminos);
 /*Devuelve el último término ingresado*/
+/*PRECONDICION: La lista tiene al menos un elemento.*/
 Boolean listaVacia(ListaTerminos terminos);
 /*Devuelve true si la lista de términos es vacía*/
 void borrarNodosListaTerminos(ListaTerminos &terminos);
 /*Borra todos los nodos de la Lista de términos*/
 
-void normalizarTerminos(ListaTerminos &listaTerminos);
+void normalizarTerminos(ListaTerminos &terminos);
 /*Normaliza la lista de términos eliminando términos con coeficiente cero - es un procedimiento recursivo*/
 /*PRECONDICION: La lista de términos debe tener más de un término */
 

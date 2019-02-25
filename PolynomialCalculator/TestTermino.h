@@ -17,7 +17,7 @@ const Termino mockTermino = {3, 2};//+3x^2
 const Termino mockTerminoNegativo = {-2, 4};//-2x^4
 const Termino mockTerminoPosParaNeg = {2, 4};//-2x^4
 const Termino mockTerminoNulo = {0, 0};//
-const Termino mockTerminoExp0 = {4, 0};//
+const Termino mockTerminoExp0 = {4, 0};//+4x^0
 
 const int evaluarPositivo = 4;
 const int evaluarNegativo = -3;

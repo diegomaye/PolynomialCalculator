@@ -59,7 +59,7 @@ Boolean validarExtension(String nombreArchivo);
 void toString(String s, FILE * f);
 /*dado un string y un archivo, almacena el string en un archivo*/
 void fromString(String &s, FILE * f);
-/*dado un archivo y un string pasado por valor, carga en el string el contenido del archivo*/
+/*dado un archivo y un string pasado por referencia, carga en el string el contenido del archivo*/
 
 #endif /* String_h */
 

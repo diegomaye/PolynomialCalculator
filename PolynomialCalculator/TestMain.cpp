@@ -73,4 +73,14 @@ int main() {
     printEnter();
     probarMostarTerminosL3(terminosL3);
     printEnter();
+    ListaTerminos nuevaLista = NULL;
+    sumarTerminos(terminosL1, terminosL2, nuevaLista);
+    mostrarTerminos(nuevaLista);
+    printEnter();
+    printEnter();
+    ListaTerminos producto = NULL;
+    multiplicarTerminos(terminosL1, terminosL2, producto);
+    mostrarTerminos(producto);
+    printEnter();
+
 }

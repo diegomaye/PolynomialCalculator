@@ -38,7 +38,7 @@ void scan(String &s);
 Boolean strmen(String s1, String s2);
 /*determina si s1 es alfabeticamente menor que s2*/
 Boolean strreq(String s1, String s2);
-/*determina si los sctring son iguales*/
+/*determina si los strings son iguales*/
 void strcop(String &s1, String s2);
 /*copia el segmento en el primero*/
 void strcon(String &s1, String s2);

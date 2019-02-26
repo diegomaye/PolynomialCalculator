@@ -31,15 +31,20 @@ Boolean existeGrado(ListaTerminos &terminos, Termino termino);
 /*devuelve true si ese grado ya existe en la lista*/
 int contarTerminos(ListaTerminos terminos);
 //Devuelve la cantidad de términos de la lista dada
+Boolean mayorCantidadDeTerminos(ListaTerminos terminos1, ListaTerminos terminos2);
+//Devuelve true si terminos1 tiene mayor cantidad de terminos que terminos2
 void borrarTermino(ListaTerminos &terminos, int exponente);
 //Dado un grado, borra los términos en ese grado
 /*PRECONDICION: La lista de terminos no puede estar vacía */
 Termino primerTermino(ListaTerminos terminos);
 //Devuelve el primer término de la lista
 /*PRECONDICION: La lista de terminos no puede estar vacía */
+Boolean mayorGrado(ListaTerminos terminos1, ListaTerminos terminos2);
+//Dados dos listados de terminos determina terminos1 es de mayor grado que terminos2.
 
 void sumarTerminos(ListaTerminos terminos1, ListaTerminos terminos2, ListaTerminos &terminosResultadoSuma);
-/*Dados dos términos devuelve en “terminosResultadoSuma” el resultado de la suma*/
+/*Dadas dos listas de terminos devuelve en terminosResultadoSuma el resultado de sumar mabas listas*/
+/*PRECONDICION: terminos1 tiene mayor cantidad de terminos que terminos2*/
 void multiplicarTerminos(ListaTerminos terminos1, ListaTerminos terminos2, ListaTerminos &terminosResultadoMultiplicacion);
 /*Dados dos términos devuelve en “terminosResultadoMutiplicacion” el resultado de la multiplicación*/
 
@@ -60,5 +65,7 @@ void normalizarTerminos(ListaTerminos &terminos);
 /*Normaliza la lista de términos eliminando términos con coeficiente cero - es un procedimiento recursivo*/
 /*PRECONDICION: La lista de términos debe tener más de un término */
 
+void bajarTerminos(ListaTerminos terminos, const char* nomArch);
+void levantarTerminos(ListaTerminos &terminos, const char* nomArch);
 
 #endif /* Terminos_h */

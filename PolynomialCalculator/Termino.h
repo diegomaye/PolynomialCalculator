@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <cmath>
+#include "String.h"
 
 typedef struct{
     int coeficiente;
@@ -27,6 +28,8 @@ void cargarCoeficienteTermino(Termino &termino, int coeficiente);
 //Carga el coeficiente en el término
 void cargarExponenteTermino(Termino &termino, int exponente);
 //Carga el exponente en el término
+Boolean terminoMayorGrado(Termino termino1, Termino termino2);
+//Devueve true si termino1 es mayor que termino2
 
 /*OPERACIONES DE TERMINO*/
 void sumarTerminos(Termino termino1, Termino termino2, Termino &termino1Resultado);

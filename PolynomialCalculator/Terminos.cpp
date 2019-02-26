@@ -10,7 +10,7 @@
 
 void mostrarTerminos(ListaTerminos terminos){
     while(terminos != NULL){
-        mostrarTermino(terminos -> termino);
+        mostrarTermino(terminos -> termino); /// mostrar un espacio en blanco enseguida del termino
         terminos = terminos -> sig;
     }
 }
@@ -20,7 +20,7 @@ void insertarTermino(ListaTerminos &terminos, Termino termino){
         terminos = new NodoTermino;
         terminos -> termino = termino;
         terminos -> sig = NULL;
-    } else if (terminos -> termino.exponente < termino.exponente) {
+    } else if (terminos -> termino.exponente < termino.exponente) { /// recordar usar funciones selectoras sobre el termino
         ListaTerminos nuevoNodo = new NodoTermino;
         nuevoNodo -> termino = termino;
         nuevoNodo -> sig = terminos;
@@ -43,7 +43,7 @@ void insBack(ListaTerminos &terminos, Termino termino){
 Boolean existeGrado(ListaTerminos &terminos, Termino termino){
     if(terminos == NULL)
         return FALSE;
-    else if (terminos -> termino.exponente == termino.exponente)
+    else if (terminos -> termino.exponente == termino.exponente) /// idem antes
         return TRUE;
     else
         return existeGrado(terminos, termino);
@@ -56,6 +56,15 @@ int contarTerminos(ListaTerminos terminos){
         terminos = terminos -> sig;
     }
     return count;
+}
+
+Boolean mayorCantidadDeTerminos(ListaTerminos terminos1, ListaTerminos terminos2){
+    int val1 = contarTerminos(terminos1);
+    int val2 = contarTerminos(terminos2);
+    if (val1 > val2)
+        return TRUE;
+    else
+        return FALSE;
 }
 
 void borrarTermino(ListaTerminos &terminos, int exponente){
@@ -76,12 +85,71 @@ Termino primerTermino(ListaTerminos terminos){
     return terminos -> termino;
 }
 
-void sumarTerminos(ListaTerminos terminos1, ListaTerminos terminos2, ListaTerminos &terminosResultadoSuma){
-    
+Boolean mayorGrado(ListaTerminos terminos1, ListaTerminos terminos2){
+    Termino termino1 = primerTermino(terminos1);
+    Termino termino2 = primerTermino(terminos2);
+    return terminoMayorGrado(termino1, termino2);
 }
 
-void multiplicarTerminos(ListaTerminos terminos1, ListaTerminos terminos2, ListaTerminos &terminosResultadoMultiplicacion){
-    
+
+void sumarTerminos(ListaTerminos terminos1, ListaTerminos terminos2, ListaTerminos &resultado){
+    if (terminos1 != NULL) {
+        Termino termino1 = primerTermino(terminos1);
+        if(terminos2 == NULL){
+            resultado = terminos1;
+        } else {
+            Termino termino2 = primerTermino(terminos2);
+            if(termino1.exponente > termino2.exponente){ /// selectoras
+                resultado = new NodoTermino;
+                resultado -> termino = termino1;
+                resultado -> sig = NULL;
+                sumarTerminos(terminos1 -> sig, terminos2, resultado -> sig);
+            } else if(termino1.exponente == termino2.exponente){
+                resultado = new NodoTermino;
+                sumarTerminos(termino1, termino2, resultado -> termino);
+                resultado -> sig = NULL;
+                sumarTerminos(terminos1 -> sig, terminos2 -> sig, resultado -> sig);
+            } else if(termino1.exponente < termino2.exponente){
+                resultado = new NodoTermino;
+                resultado -> termino = termino2;
+                resultado -> sig = NULL;
+                sumarTerminos(terminos1, terminos2 -> sig, resultado -> sig);
+            }
+        }
+    }
+}
+
+void multiplicarTerminosXTermino(ListaTerminos terminos, Termino termino, ListaTerminos &resultado){
+    if (terminos == NULL) {
+        resultado = NULL;
+    }
+    else{
+        resultado = new NodoTermino;
+        multiplicarTerminos(primerTermino(terminos), termino, resultado -> termino);
+        multiplicarTerminosXTermino(terminos -> sig, termino, resultado -> sig);
+    }
+}
+
+void multiplicarTerminos(ListaTerminos terminos1, ListaTerminos terminos2, ListaTerminos &resultado){
+    if (terminos1 == NULL) {
+        resultado = NULL;
+    } else if (contarTerminos(terminos1) == 1){
+        Termino termino = primerTermino(terminos1);
+        multiplicarTerminosXTermino(terminos2, termino, resultado);
+    } else {
+        Termino termino = primerTermino(terminos1);
+        ListaTerminos terminosMultiplicadosXTermino;
+        ListaTerminos terminosRetorno;
+        multiplicarTerminosXTermino(terminos2, termino, terminosMultiplicadosXTermino);
+        multiplicarTerminos(terminos1 -> sig, terminos2, terminosRetorno);
+        if(mayorCantidadDeTerminos(terminosMultiplicadosXTermino, terminosRetorno)){
+            sumarTerminos(terminosMultiplicadosXTermino, terminosRetorno, resultado);
+        }
+        else {
+            sumarTerminos(terminosRetorno, terminosMultiplicadosXTermino, resultado);
+        }
+        
+    }
 }
 
 int evaluarTerminos(ListaTerminos terminos, int evaluar){
@@ -134,4 +202,24 @@ void normalizarTerminos(ListaTerminos &terminos){
         else
             normalizarTerminos(terminos -> sig);
     }
+}
+
+void bajarTerminos(ListaTerminos terminos, const char* nomArch){
+    FILE * f = fopen (nomArch, "wb");
+    while (terminos != NULL) {
+        bajarTermino(terminos -> termino, f);
+        terminos = terminos -> sig;
+    }
+    fclose (f);
+}
+
+void levantarTerminos(ListaTerminos &terminos, const char* nomArch){
+    FILE * f = fopen (nomArch, "rb");
+    Termino termino;
+    levantarTermino(termino, f);
+    while (!feof(f)) {
+        insertarTermino(terminos, termino);
+        levantarTermino(termino, f);
+    }
+    fclose (f);
 }

@@ -1,7 +1,9 @@
 #include "TestError.h"
 #include "TestTermino.h"
+#include "TestListaString.h"
 
 int main() {
+   /*
     //PRUEBAS DE TODOS LOS MENSAJES DE ERROR:
     probarTodosMensajesDeError();
     printEnter();
@@ -40,4 +42,8 @@ int main() {
     probarEvaluarTerminoNegativo();
     printf("Prueba probarEvaluarTerminoNulo(): \n");
     probarEvaluarTerminoNulo();
+    */
+
+    probarInsertarElementoListaString();
 }
+

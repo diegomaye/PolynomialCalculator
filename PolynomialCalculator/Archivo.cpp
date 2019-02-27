@@ -11,7 +11,7 @@ Boolean existeArchivo(const char * nomArchivo) {
 }
 
 FILE * crearArchivo(const char * nomArchivo) {
-    FILE * f = fopen(nomArchivo, "ab");
+    FILE * f = fopen(nomArchivo, "wb");
     fclose(f);
     return f;
 }

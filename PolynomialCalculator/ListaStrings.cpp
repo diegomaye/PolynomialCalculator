@@ -48,30 +48,32 @@ void insertarElementoListaString(ListaStrings &s,String c)
 void darListaSeparadaPorEspacios(String c, ListaStrings &s)
 {
     int i=0;
+    int j=0;
+    int largo=0;
     String nuevoString;
+    strcrear(nuevoString);
     while(c[i] != '\0')
     {
-        if(c[i]== ' ') /// no se precisa if/else, poner solamente los dos while
+        while(c[i] == ' ')
         {
-            while(c[i] == ' ')
-            {
-                i++;
-            }
+            i++;
         }
-        else
-        {
-            while(c[i] != ' ')
-            {
-                strcrear(nuevoString);
-                strcop(c,nuevoString);  /// creo que los parametros deberian ir al reves
+                while(c[j]!= ' ')
+                {
+                    strlar(c);
+
+                }
+                largo=strlar(c);
+                nuevoString=new char[largo+1];
+                strcop(nuevoString,c);
                 crearListaString(s);
                 insertarElementoListaString(s,c); /// cuidado aca, esta copiando el string completo y no solo el pedacito que interesa
                 /// sugerencia: ademas de i, usar otro indice j (mirar dibujo de la hojita)
             }
-        }
+
     }
 
-}
+
 
 int contarElementos(ListaStrings lista)
 {

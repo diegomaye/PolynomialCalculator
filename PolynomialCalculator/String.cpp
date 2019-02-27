@@ -240,11 +240,38 @@ int convertirANumero(String s)
 
 }
 
-Boolean validarExtension(String nombreArchivo) {//ojo si nombre archivo tiene mas de un punto.
+Boolean cantidadPuntosEnString(String s)
+{
+    Boolean cumplePuntos;
+    int total=0;
+    int i=0;
+    while(s[i] != '\0')
+    {
+        if(s[i] == '.')
+        {
+            total=total+1;
+            i++;
+        }
+        else
+            i++;
+    }
+    if(total==1)
+        cumplePuntos=TRUE;
+    else
+        cumplePuntos=FALSE;
+
+    return cumplePuntos;
+}
+
+Boolean validarExtension(String nombreArchivo)
+{
+
     Boolean resultado = FALSE;
     String nombre = new char[MAX];
     int i = 0;
-    while (nombreArchivo[i]!='.' && nombreArchivo[i]!=VACIO) {
+    if(cantidadPuntosEnString(nombreArchivo)==TRUE)
+    {
+        while (nombreArchivo[i]!='.' && nombreArchivo[i]!=VACIO) {
         nombre[i] = nombreArchivo[i];
         i++;
     }
@@ -273,5 +300,5 @@ Boolean validarExtension(String nombreArchivo) {//ojo si nombre archivo tiene ma
             }
         }
     }
-    return resultado;
+    }
 }

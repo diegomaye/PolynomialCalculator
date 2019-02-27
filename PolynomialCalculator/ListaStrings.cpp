@@ -51,7 +51,7 @@ void darListaSeparadaPorEspacios(String c, ListaStrings &s)
     String nuevoString;
     while(c[i] != '\0')
     {
-        if(c[i]== ' ')
+        if(c[i]== ' ') /// no se precisa if/else, poner solamente los dos while
         {
             while(c[i] == ' ')
             {
@@ -63,9 +63,10 @@ void darListaSeparadaPorEspacios(String c, ListaStrings &s)
             while(c[i] != ' ')
             {
                 strcrear(nuevoString);
-                strcop(c,nuevoString);
+                strcop(c,nuevoString);  /// creo que los parametros deberian ir al reves
                 crearListaString(s);
-                insertarElementoListaString(s,c);
+                insertarElementoListaString(s,c); /// cuidado aca, esta copiando el string completo y no solo el pedacito que interesa
+                /// sugerencia: ademas de i, usar otro indice j (mirar dibujo de la hojita)
             }
         }
     }
@@ -91,6 +92,7 @@ void borrarNodosListaStrings(ListaStrings &lista,String &s)
     ListaStrings aux= lista;
     while(lista != NULL)
     {
+        /// tambien hay que borrar aux-> info
         s=aux->info;
         lista=aux->sig;
         delete aux;

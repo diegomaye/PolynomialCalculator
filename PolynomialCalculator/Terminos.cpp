@@ -10,7 +10,8 @@
 
 void mostrarTerminos(ListaTerminos terminos){
     while(terminos != NULL){
-        mostrarTermino(terminos -> termino); /// mostrar un espacio en blanco enseguida del termino
+        mostrarTermino(terminos -> termino);
+        printf(" ");
         terminos = terminos -> sig;
     }
 }
@@ -20,7 +21,7 @@ void insertarTermino(ListaTerminos &terminos, Termino termino){
         terminos = new NodoTermino;
         terminos -> termino = termino;
         terminos -> sig = NULL;
-    } else if (terminos -> termino.exponente < termino.exponente) { /// recordar usar funciones selectoras sobre el termino
+    } else if (darExponenteTermino(terminos -> termino) < darExponenteTermino(termino)) { /// recordar usar funciones selectoras sobre el termino
         ListaTerminos nuevoNodo = new NodoTermino;
         nuevoNodo -> termino = termino;
         nuevoNodo -> sig = terminos;
@@ -43,7 +44,7 @@ void insBack(ListaTerminos &terminos, Termino termino){
 Boolean existeGrado(ListaTerminos &terminos, Termino termino){
     if(terminos == NULL)
         return FALSE;
-    else if (terminos -> termino.exponente == termino.exponente) /// idem antes
+    else if (darExponenteTermino(terminos -> termino) == darExponenteTermino(termino))
         return TRUE;
     else
         return existeGrado(terminos, termino);
@@ -99,17 +100,17 @@ void sumarTerminos(ListaTerminos terminos1, ListaTerminos terminos2, ListaTermin
             resultado = terminos1;
         } else {
             Termino termino2 = primerTermino(terminos2);
-            if(termino1.exponente > termino2.exponente){ /// selectoras
+            if(darExponenteTermino(termino1) > darExponenteTermino(termino2)){ /// selectoras
                 resultado = new NodoTermino;
                 resultado -> termino = termino1;
                 resultado -> sig = NULL;
                 sumarTerminos(terminos1 -> sig, terminos2, resultado -> sig);
-            } else if(termino1.exponente == termino2.exponente){
+            } else if(darExponenteTermino(termino1) == darExponenteTermino(termino2)){
                 resultado = new NodoTermino;
                 sumarTerminos(termino1, termino2, resultado -> termino);
                 resultado -> sig = NULL;
                 sumarTerminos(terminos1 -> sig, terminos2 -> sig, resultado -> sig);
-            } else if(termino1.exponente < termino2.exponente){
+            } else if(darExponenteTermino(termino1) < darExponenteTermino(termino2)){
                 resultado = new NodoTermino;
                 resultado -> termino = termino2;
                 resultado -> sig = NULL;

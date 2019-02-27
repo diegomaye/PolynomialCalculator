@@ -18,8 +18,16 @@ void mostrarTermino(Termino termino){ /// x^1 mostrarlo simplemente como x
                 printf("+%d", termino.coeficiente);
             }
         }
-    }
-    else{
+    } else if(termino.exponente == 1) {
+        if(termino.coeficiente == -1)
+            printf("-x");
+        else if(termino.coeficiente == 1)
+            printf("+x");
+        else if(termino.coeficiente < 0)
+            printf("%dx", termino.coeficiente);
+        else
+            printf("+%dx", termino.coeficiente);
+    } else {
         if(termino.coeficiente != 0){
             if(termino.coeficiente == -1)
                 printf("-x^%d", termino.exponente);

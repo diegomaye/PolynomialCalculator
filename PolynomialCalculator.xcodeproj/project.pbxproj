@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D116F8522237EA700B37A1B /* TestTerminos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D116F8322237EA700B37A1B /* TestTerminos.cpp */; };
 		2D12335B2220E59900F7EC15 /* TestError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D1233592220E59900F7EC15 /* TestError.cpp */; };
 		2D12335E2220EB9E00F7EC15 /* TestTermino.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D12335C2220EB9E00F7EC15 /* TestTermino.cpp */; };
 		2D76D4FB221F8C970046D5BA /* TestMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D76D4F6221F8C970046D5BA /* TestMain.cpp */; };
@@ -35,6 +36,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D116F8322237EA700B37A1B /* TestTerminos.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestTerminos.cpp; sourceTree = "<group>"; };
+		2D116F8422237EA700B37A1B /* TestTerminos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTerminos.h; sourceTree = "<group>"; };
 		2D1233592220E59900F7EC15 /* TestError.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestError.cpp; sourceTree = "<group>"; };
 		2D12335A2220E59900F7EC15 /* TestError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestError.h; sourceTree = "<group>"; };
 		2D12335C2220EB9E00F7EC15 /* TestTermino.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestTermino.cpp; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 				2D12335A2220E59900F7EC15 /* TestError.h */,
 				2D12335C2220EB9E00F7EC15 /* TestTermino.cpp */,
 				2D12335D2220EB9E00F7EC15 /* TestTermino.h */,
+				2D116F8322237EA700B37A1B /* TestTerminos.cpp */,
+				2D116F8422237EA700B37A1B /* TestTerminos.h */,
 			);
 			name = Pruebas;
 			sourceTree = "<group>";
@@ -144,12 +149,12 @@
 				2D7DDE5722166FC600085B8F /* Parser.h */,
 				2D7DDE5A22166FDD00085B8F /* Error.cpp */,
 				2D7DDE5B22166FDD00085B8F /* Error.h */,
-				2D7DDE6C221671CD00085B8F /* Polinomio.cpp */,
-				2D7DDE6D221671CD00085B8F /* Polinomio.h */,
 				2D7DDE6F221671DB00085B8F /* Termino.cpp */,
 				2D7DDE70221671DB00085B8F /* Termino.h */,
 				2D7DDE72221671E800085B8F /* Terminos.cpp */,
 				2D7DDE73221671E800085B8F /* Terminos.h */,
+				2D7DDE6C221671CD00085B8F /* Polinomio.cpp */,
+				2D7DDE6D221671CD00085B8F /* Polinomio.h */,
 				2D7DDE75221671FD00085B8F /* Polinomios.cpp */,
 				2D7DDE76221671FD00085B8F /* Polinomios.h */,
 			);
@@ -214,6 +219,7 @@
 			files = (
 				2D7DDE5C22166FDD00085B8F /* Error.cpp in Sources */,
 				2D7DDE4A22166DFB00085B8F /* Boolean.cpp in Sources */,
+				2D116F8522237EA700B37A1B /* TestTerminos.cpp in Sources */,
 				2D7DDE77221671FD00085B8F /* Polinomios.cpp in Sources */,
 				2D7DDE6E221671CD00085B8F /* Polinomio.cpp in Sources */,
 				2D12335E2220EB9E00F7EC15 /* TestTermino.cpp in Sources */,

@@ -1,5 +1,6 @@
 #include "TestError.h"
 #include "TestTermino.h"
+#include "TestTerminos.h"
 
 int main() {
     //PRUEBAS DE TODOS LOS MENSAJES DE ERROR:
@@ -40,4 +41,46 @@ int main() {
     probarEvaluarTerminoNegativo();
     printf("Prueba probarEvaluarTerminoNulo(): \n");
     probarEvaluarTerminoNulo();
+    printEnter();
+    //PRUEBAS DE TERMINOS:
+    printf("///////////////// TESTS DE Terminos.h ////////////////\n");
+    printEnter();
+    //MOCKEANDO LISTA DE TERMINOS
+    ListaTerminos terminosL1 = NULL;
+    insertarTermino(terminosL1, (Termino){2,3});
+    insertarTermino(terminosL1, (Termino){-5,2});
+    insertarTermino(terminosL1, (Termino){1,1});
+    insertarTermino(terminosL1, (Termino){-7,0});
+    
+    ListaTerminos terminosL2 = NULL;
+    insertarTermino(terminosL2, (Termino){20,8});
+    insertarTermino(terminosL2, (Termino){-10,3});
+    insertarTermino(terminosL2, (Termino){4,0});
+    
+    ListaTerminos terminosL3 = NULL;
+    insertarTermino(terminosL3, (Termino){1,6});
+    insertarTermino(terminosL3, (Termino){-4,5});
+    insertarTermino(terminosL3, (Termino){-4,4});
+    insertarTermino(terminosL3, (Termino){4,3});
+    insertarTermino(terminosL3, (Termino){4,2});
+    insertarTermino(terminosL3, (Termino){2,1});
+    insertarTermino(terminosL3, (Termino){2,0});
+    
+    printf("Prueba probarMostarTerminosLXX() para las listas terminosL1, terminosL2, terminosL3 \n");
+    probarMostarTerminosL1(terminosL1);
+    printEnter();
+    probarMostarTerminosL2(terminosL2);
+    printEnter();
+    probarMostarTerminosL3(terminosL3);
+    printEnter();
+    ListaTerminos nuevaLista = NULL;
+    sumarTerminos(terminosL1, terminosL2, nuevaLista);
+    mostrarTerminos(nuevaLista);
+    printEnter();
+    printEnter();
+    ListaTerminos producto = NULL;
+    multiplicarTerminos(terminosL1, terminosL2, producto);
+    mostrarTerminos(producto);
+    printEnter();
+
 }

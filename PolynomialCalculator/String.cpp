@@ -265,40 +265,40 @@ Boolean cantidadPuntosEnString(String s)
 
 Boolean validarExtension(String nombreArchivo)
 {
-
     Boolean resultado = FALSE;
     String nombre = new char[MAX];
     int i = 0;
-    if(cantidadPuntosEnString(nombreArchivo)==TRUE)
+    if(cantidadPuntosEnString(nombreArchivo))
     {
         while (nombreArchivo[i]!='.' && nombreArchivo[i]!=VACIO) {
         nombre[i] = nombreArchivo[i];
         i++;
-    }
-    nombre[i] = VACIO;
-    if (esAlfanumerico(nombre)) {
-        int largo = strlar(nombreArchivo);
-        String ext = new char[5];
-        int j = 0;
-        int k = largo - 4;
-        while (nombreArchivo[k]!=VACIO) {
-            ext[j] = nombreArchivo[k];
-            j++;
-            k++;
         }
-        ext[j] = VACIO;
-        String txt = new char[5];
-        txt[0] = '.';
-        txt[1] = 't';
-        txt[2] = 'x';
-        txt[3] = 't';
-        txt[4] = VACIO;
-        if (strreq(ext, txt)) {
-            strcon(nombre, ext);
-            if (strreq(nombreArchivo, nombre)) {
-                resultado = TRUE;
+        nombre[i] = VACIO;
+        if (esAlfanumerico(nombre)) {
+            int largo = strlar(nombreArchivo);
+            String ext = new char[5];
+            int j = 0;
+            int k = largo - 4;
+            while (nombreArchivo[k]!=VACIO) {
+                ext[j] = nombreArchivo[k];
+                j++;
+                k++;
+            }
+            ext[j] = VACIO;
+            String txt = new char[5];
+            txt[0] = '.';
+            txt[1] = 't';
+            txt[2] = 'x';
+            txt[3] = 't';
+            txt[4] = VACIO;
+            if (strreq(ext, txt)) {
+                strcon(nombre, ext);
+                if (strreq(nombreArchivo, nombre)) {
+                    resultado = TRUE;
+                }
             }
         }
     }
-    }
+    return resultado;
 }

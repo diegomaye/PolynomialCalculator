@@ -53,6 +53,8 @@ int convertirANumero(String s);
 /*devuelve int con el valor del string*/
 Boolean validarExtension(String nombreArchivo);
 /*devuelve true si el nombre y la extensión son correctos*/
+Boolean cantidadPuntosEnString(String s);
+
 
 
 //Almacenamiento

@@ -82,17 +82,17 @@ void probarValidarExtension() {
     printf("El string ");
     print(mockValidarExtension);
     if ((validarExtension(mockValidarExtension))) {
-        printf(" tiene un nombre y extensión validos.");
+        printf(" tiene un nombre y extension validos.");
     } else {
-        printf(" tiene un nombre o extensión invalidos.");
+        printf(" tiene un nombre o extension invalidos.");
     }
     printEnter();
     printf("El string ");
     print(mockNoValidarExtension);
     if ((validarExtension(mockNoValidarExtension))) {
-        printf(" tiene un nombre y extensión validos.");
+        printf(" tiene un nombre y extension validos.");
     } else {
-        printf(" tiene un nombre o extensión invalidos.");
+        printf(" tiene un nombre o extension invalidos.");
     }
     printEnter();
 }

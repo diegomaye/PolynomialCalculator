@@ -275,3 +275,4 @@ Boolean validarExtension(String nombreArchivo) {//ojo si nombre archivo tiene ma
     }
     return resultado;
 }
+

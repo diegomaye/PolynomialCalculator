@@ -13,7 +13,7 @@
 #include "String.h"
 
 typedef struct nodo_string {
-                            String info;
+                            String parametro;
                             nodo_string * sig;
                             } NodoString;
 
@@ -36,8 +36,11 @@ int contarElementos(ListaStrings lista);
 /*dada una lista de Strings, devuelve la cantidad de strings que tiene*/
 void darStringEnPosicion(ListaStrings lista, int &posicion, String &s);
 /*dado un string y una posición  devuelve el string en esa posición de la lista*/
-void borrarNodosListaStrings(ListaStrings &lista,String &s);
+void borrarNodosListaStrings(ListaStrings &lista);
 /*Borra todos los nodos de la Lista de String*/
+
+void darString(ListaStrings ls,String &s);
+/*Devuelve un String*/
 
 
 

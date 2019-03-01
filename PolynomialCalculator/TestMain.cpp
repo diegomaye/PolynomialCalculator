@@ -1,6 +1,5 @@
 #include "TestError.h"
 #include "TestTermino.h"
-#include "TestArchivo.h"
 #include "TestTerminos.h"
 
 int main() {
@@ -43,14 +42,14 @@ int main() {
     printf("Prueba probarEvaluarTerminoNulo(): \n");
     probarEvaluarTerminoNulo();
     //PRUEBAS DE ARCHIVO:
-    printf("///////////////// TESTS DE Archivo.h /////////////////\n");
-    printEnter();
-    printf("Prueba Existe Archivo 'probarExisteArchivo' \n");
-    probarExisteArchivo();
-    printEnter();
-    printf("Prueba Crear Archivo 'probarCrearArchivo' \n");
-    probarCrearArchivo();
-    printEnter();
+//    printf("///////////////// TESTS DE Archivo.h /////////////////\n");
+//    printEnter();
+//    printf("Prueba Existe Archivo 'probarExisteArchivo' \n");
+//    probarExisteArchivo();
+//    printEnter();
+//    printf("Prueba Crear Archivo 'probarCrearArchivo' \n");
+//    probarCrearArchivo();
+//    printEnter();
     //PRUEBAS DE TERMINOS:
     printf("///////////////// TESTS DE Terminos.h ////////////////\n");
     printEnter();

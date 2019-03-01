@@ -70,15 +70,18 @@ void borrarPolinomio(Polinomio &polinomio){
 }
 
 void bajarPolinomio(Polinomio polinomio, FILE * f){
-    //????????????
+    toString(polinomio.nombre, f);
+    bajarTerminos(polinomio.terminos, f);
 }
 
 void levantarPolinomio(Polinomio &polinomio, FILE * f){
-    //????????????
+    strcrear(polinomio.nombre);
+    fromString(polinomio.nombre, f);
+    levantarTerminos(polinomio.terminos, f);
 }
 
 Boolean existePolinomioEnArchivo(Polinomio polinomio){
     return TRUE;
-    //????????????
+    //TODO: MIRAR Boolean existeArchivo(const char * nomArchivo) { EN Archivo.h
 }
 

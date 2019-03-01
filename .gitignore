@@ -35,3 +35,6 @@ PolynomialCalculator/PolynomialCalculator.cbp
 PolynomialCalculator/PolynomialCalculator.depend
 
 .DS_Store
+PolynomialCalculator.xcodeproj/project.pbxproj
+PolynomialCalculator.xcodeproj/project.xcworkspace/xcuserdata/diegomaye.xcuserdatad/UserInterfaceState.xcuserstate
+PolynomialCalculator.xcodeproj/xcuserdata/diegomaye.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist

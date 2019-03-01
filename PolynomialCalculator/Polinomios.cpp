@@ -3,12 +3,12 @@
 //  PolynomialCalculator
 //
 //  Created by diegomaye on 2/15/19.
-//  Copyright Â© 2019 Code4Business. All rights reserved.
+//  Copyright © 2019 Code4Business. All rights reserved.
 //
 
 #include "Polinomios.h"
 
-void insertarPolinomio (ABBPolinomios &arbolPolinomios, Polinomio polinomio) {
+void insertarPolinomio(ABBPolinomios &arbolPolinomios, Polinomio polinomio) {
     if (!existeAlMenosUnPolinomioEnABB(arbolPolinomios)) {
         arbolPolinomios = new Nodo;
         arbolPolinomios -> pol = polinomio;
@@ -43,7 +43,7 @@ Boolean existePolinomioEnABB(ABBPolinomios arbolPolinomios, String nombre) {
             return TRUE;
         } else {
             if (strmen(nombre, nombrePol)) {
-                return existePolinomioEnABB(darIzquierdo(arbolPolinomios, nombre);
+                return existePolinomioEnABB(darIzquierdo(arbolPolinomios), nombre);
             } else {
                 return existePolinomioEnABB(darDerecho(arbolPolinomios), nombre);
             }
@@ -51,6 +51,11 @@ Boolean existePolinomioEnABB(ABBPolinomios arbolPolinomios, String nombre) {
     }
 }
 void desplegarABB(ABBPolinomios arbolPolinomios) {
+    if (arbolPolinomios != NULL) {
+        desplegarABB(arbolPolinomios->hizq);
+        mostrarPolinomio(arbolPolinomios->pol);
+        desplegarABB(arbolPolinomios->hder);
+    }
 }
 Polinomio darRaiz(ABBPolinomios arbolPolinomios) {
     return arbolPolinomios ->pol;
@@ -62,6 +67,13 @@ ABBPolinomios darDerecho(ABBPolinomios arbolPolinomios) {
     return arbolPolinomios ->hder;
 }
 void eliminarABB(ABBPolinomios &arbolPolinomios) {
+    if (arbolPolinomios != NULL) {
+        eliminarABB(arbolPolinomios ->hizq);
+        eliminarABB(arbolPolinomios ->hder);
+        borrarPolinomio(arbolPolinomios->pol);
+        delete arbolPolinomios;
+        arbolPolinomios = NULL;
+    }
 }
 Polinomio buscarPolinomio(ABBPolinomios arbol, String nombre) {
     String nombrePol;

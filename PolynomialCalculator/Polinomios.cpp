@@ -3,7 +3,7 @@
 //  PolynomialCalculator
 //
 //  Created by diegomaye on 2/15/19.
-//  Copyright © 2019 Code4Business. All rights reserved.
+//  Copyright Â© 2019 Code4Business. All rights reserved.
 //
 
 #include "Polinomios.h"
@@ -16,7 +16,7 @@ void insertarPolinomio(ABBPolinomios &arbolPolinomios, Polinomio polinomio) {
         arbolPolinomios -> hder = NULL;
 
     } else {
-        String nombre;
+        String nombre; //falta el crear string
         darNombrePolinomio(arbolPolinomios->pol, nombre);
         String nombreIngreso;
         darNombrePolinomio(polinomio, nombreIngreso);
@@ -37,7 +37,7 @@ Boolean existePolinomioEnABB(ABBPolinomios arbolPolinomios, String nombre) {
     if (!existeAlMenosUnPolinomioEnABB(arbolPolinomios)) {
         return FALSE;
     } else {
-        String nombrePol;
+        String nombrePol; //crear el string
         darNombrePolinomio(arbolPolinomios->pol, nombrePol);
         if (strreq(nombrePol, nombre)) {
             return TRUE;
@@ -76,7 +76,7 @@ void eliminarABB(ABBPolinomios &arbolPolinomios) {
     }
 }
 Polinomio buscarPolinomio(ABBPolinomios arbol, String nombre) {
-    String nombrePol;
+    String nombrePol; //llamar al crear string
     darNombrePolinomio(arbol ->pol, nombrePol);
     if (strreq(nombre, nombrePol)) {
         return darRaiz(arbol);

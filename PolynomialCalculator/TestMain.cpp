@@ -1,6 +1,15 @@
 #include "TestError.h"
 #include "TestTermino.h"
 #include "TestTerminos.h"
+#include "TestPolinomio.h"
+
+ListaTerminos terminosL1 = NULL;
+ListaTerminos terminosL2 = NULL;
+ListaTerminos terminosL3 = NULL;
+Polinomio polinomio1;
+Polinomio polinomio1Copia;
+Polinomio polinomio2;
+Polinomio polinomio3;
 
 int main() {
     //PRUEBAS DE TODOS LOS MENSAJES DE ERROR:
@@ -54,41 +63,67 @@ int main() {
     printf("///////////////// TESTS DE Terminos.h ////////////////\n");
     printEnter();
     //MOCKEANDO LISTA DE TERMINOS
-    ListaTerminos terminosL1 = NULL;
-    insertarTermino(terminosL1, (Termino){2,3});
-    insertarTermino(terminosL1, (Termino){-5,2});
-    insertarTermino(terminosL1, (Termino){1,1});
-    insertarTermino(terminosL1, (Termino){-7,0});
+    printf("Inicia el mockeo de terminos \n");
+    mockTerminosPruebaInsert(terminosL1, terminosL2, terminosL3);
+    printEnter();
+    printf("Prueba probarInsertarTerminoAlFinal(...) \n");
+    probarInsertarTerminoAlFinal(terminosL1);
+    printEnter();
+    printEnter();
+    printf("Prueba probarInsertarTerminoEnElMedio(...) \n");
+    probarInsertarTerminoEnElMedio(terminosL2);
+    printEnter();
+    printEnter();
+    printf("Prueba probarInsertarTerminoAlPrincipio(...) \n");
+    probarInsertarTerminoAlPrincipio(terminosL3);
+    printEnter();
+    printEnter();
+    printf("Prueba probarInsertarTerminoEnListaVacia(...) \n");
+    probarInsertarTerminoEnListaVacia();
+    printEnter();
+    printEnter();
+    printf("Pruebar suma y producto de terminos \n");
+    printEnter();
+    probarSumarTerminos(terminosL1, terminosL2);
+    probarMultiplicarTerminos(terminosL2, terminosL3);
     
-    ListaTerminos terminosL2 = NULL;
-    insertarTermino(terminosL2, (Termino){20,8});
-    insertarTermino(terminosL2, (Termino){-10,3});
-    insertarTermino(terminosL2, (Termino){4,0});
-    
-    ListaTerminos terminosL3 = NULL;
-    insertarTermino(terminosL3, (Termino){1,6});
-    insertarTermino(terminosL3, (Termino){-4,5});
-    insertarTermino(terminosL3, (Termino){-4,4});
-    insertarTermino(terminosL3, (Termino){4,3});
-    insertarTermino(terminosL3, (Termino){4,2});
-    insertarTermino(terminosL3, (Termino){2,1});
-    insertarTermino(terminosL3, (Termino){2,0});
-    
-    printf("Prueba probarMostarTerminosLXX() para las listas terminosL1, terminosL2, terminosL3 \n");
-    probarMostarTerminosL1(terminosL1);
+    printf("///////////////// TESTS DE Polinomio.h ////////////////\n");
+    mockPolinomiosPruebaCargar(polinomio1, polinomio2, polinomio3, terminosL1, terminosL2, terminosL3);
+    polinomio1Copia = polinomio1;
+    printf("Pruebas de la suma: \n");
     printEnter();
-    probarMostarTerminosL2(terminosL2);
+    probarSumaPolinomiosIgualLargo(polinomio1, polinomio1Copia);
     printEnter();
-    probarMostarTerminosL3(terminosL3);
+    probarSumaPolinomiosDiferenteLargo(polinomio2, polinomio3);
     printEnter();
-    ListaTerminos nuevaLista = NULL;
-    sumarTerminos(terminosL1, terminosL2, nuevaLista);
-    mostrarTerminos(nuevaLista);
+    probarSumaPolinomioNulo(polinomio3);
     printEnter();
+    printf("Pruebas del producto: \n");
     printEnter();
-    ListaTerminos producto = NULL;
-    multiplicarTerminos(terminosL1, terminosL2, producto);
-    mostrarTerminos(producto);
+    probarMultiplicarPolinomiosIgualLargo(polinomio1, polinomio1Copia);
     printEnter();
-
+    probarMultiplicarPolinomiosDiferenteLargo(polinomio2, polinomio3);
+    printEnter();
+    probarMultiplicarPolinomioNulo(polinomio3);
+    printEnter();
+    probarEvaluarPolinomio(polinomio1);
+    printEnter();
+    probarEsRaizPolinomio(polinomio1);
+    printEnter();
+    probarDarNombrePolinomio(polinomio1);
+    printEnter();
+    probarDarTerminosPolinomio(polinomio1);
+    printEnter();
+    probarPolinomioConMasTerminos(polinomio1, polinomio2);
+    printEnter();
+    probarPolinomiosIgualNombre(polinomio1, polinomio2);
+    printEnter();
+    probarPolinomioMenorNombre(polinomio1, polinomio2);
+    printEnter();
+    probarPolinomioNulo();
+    printEnter();
+    probarBorradoDePolinomio(polinomio1);
+    printEnter();
 }
+
+

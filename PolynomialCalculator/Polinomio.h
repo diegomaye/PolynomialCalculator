@@ -50,8 +50,5 @@ void bajarPolinomio(Polinomio polinomio, FILE * f);
 /*dado un polinomio se escribe este en un archivo*/
 void levantarPolinomio(Polinomio &polinomio, FILE * f);
 /*dado el nombre de un polinomio se levanta el archivo correspondiente a ese nombre y se carga en polinomio*/
-Boolean existePolinomioEnArchivo(Polinomio polinomio);
-/*dado un polinomio verifica si el polinomio si existe un archivo con ese nombre de polinomio*/
-
 
 #endif /* Polinomio_h */

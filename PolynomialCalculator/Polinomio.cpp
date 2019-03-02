@@ -69,19 +69,14 @@ void borrarPolinomio(Polinomio &polinomio){
     borrarNodosListaTerminos(polinomio.terminos);
 }
 
-void bajarPolinomio(Polinomio polinomio, FILE * f){
-    toString(polinomio.nombre, f);
+void bajarTerminosPolinomio(Polinomio polinomio, String nomArch){
+    FILE * f = fopen (nomArch, "wb");
     bajarTerminos(polinomio.terminos, f);
+    fclose (f);
 }
 
-void levantarPolinomio(Polinomio &polinomio, FILE * f){
-    strcrear(polinomio.nombre);
-    fromString(polinomio.nombre, f);
+void levantarTerminosPolinomio(Polinomio &polinomio, String nomArch){
+    FILE * f = fopen (nomArch, "rb");
     levantarTerminos(polinomio.terminos, f);
+    fclose (f);
 }
-
-Boolean existePolinomioEnArchivo(Polinomio polinomio){
-    return TRUE;
-    //TODO: MIRAR Boolean existeArchivo(const char * nomArchivo) { EN Archivo.h
-}
-

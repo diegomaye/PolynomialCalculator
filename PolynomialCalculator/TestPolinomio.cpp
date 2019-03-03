@@ -209,7 +209,11 @@ void probarPolinomioNulo() {
     cargarPolinomio(polinomio, "polinomioNulo", NULL);
     mostrarPolinomio(polinomio);
     printEnter();
-    printf("Es el polinomio nulo. \n");
+    Boolean es = polinomioNulo(polinomio);
+    if(es)
+        printf("Es el polinomio nulo. \n");
+    else
+        printf("Error");
     printEnter();
 }
 

@@ -24,11 +24,6 @@ Boolean listaStringVacia(ListaStrings s)
     return resu;
 }
 
-void darString(ListaStrings ls,String &s)
-{
-    strcop(s,ls->parametro);
-}
-
 
 void insertarElementoListaString(ListaStrings &s,String c)
 {
@@ -41,7 +36,7 @@ void insertarElementoListaString(ListaStrings &s,String c)
     }
     else
     {
-         ListaStrings aux = s;
+        ListaStrings aux = s;
         while(aux->sig != NULL)
         {
             aux=aux->sig;
@@ -50,35 +45,44 @@ void insertarElementoListaString(ListaStrings &s,String c)
     }
 
 }
-
-void darListaSeparadaPorEspacios(String c, ListaStrings &s)
+void strcopVariable(String &nuevoString,String strEntrada,int largo,int i)
 {
-    int i=0;
-    int j=0;
-    int largo=0;
+    nuevoString= new char[largo+1];
+    int posInicial=i-largo;
+    int j;
+    int t=0;
+    for(j=posInicial;j<=i;j++)
+    {
+        nuevoString[t]=strEntrada[j];
+        t++;
+    }
+    nuevoString[t]='\0';
+
+}
+
+void darListaSeparadaPorEspacios(String strEntrada, ListaStrings &lstComando)
+{
+    int i=0,largo=0;
     String nuevoString;
     strcrear(nuevoString);
-    while(c[i] != '\0')
+    crearListaString(lstComando);
+    while(strEntrada[i] != '\0')
     {
-        while(c[i] == ' ')
+        while(strEntrada[i] == ' ')
         {
             i++;
         }
-                while(c[j]!= ' ') /// no solo el espacio, sino tmb \0
-                {
-                    strlar(c);
-                    j++;
-                }
-                largo=strlar(c);
-                nuevoString=new char[largo+1];
-                strcop(nuevoString,c);
-                crearListaString(s);
-                insertarElementoListaString(s,c);
-            }
+        while((strEntrada[i]!= ' ') && (strEntrada[i] != '\0'))
+        {
+            i++;
+            largo++;
+        }
 
+        strcopVariable(nuevoString,strEntrada,largo,i);
+        insertarElementoListaString(lstComando,nuevoString);
+        largo=0;
     }
-
-
+}
 
 int contarElementos(ListaStrings lista)
 {
@@ -90,26 +94,17 @@ int contarElementos(ListaStrings lista)
 
 void darStringEnPosicion(ListaStrings lista, int posicion, String &s)
 {
-    /// re-pensarlo, ir restando posicion de a 1 en cada llamada recursiva
-    /// cuando posicion llega a 1 => devuelvo el string de ese nodo
-    /// por lo menos 2 pasos base van a haber
-    posicion=0;
     if(lista != NULL)
     {
-        if(strreq(lista->parametro,s)) /// esta comparacion no va
-            darString(lista,s); /// mejor llamar a strcop
+        if(posicion == 1)
+            strcop(s,lista->parametro);
         else
-        {
-            posicion=posicion+1;
-            darStringEnPosicion(lista,posicion,s);
-        }
+            darStringEnPosicion(lista->sig,posicion-1,s);
     }
-
 }
 
 void borrarNodosListaStrings(ListaStrings &lista)
 {
-
     if(lista != NULL)
     {
         ListaStrings aux= lista;
@@ -119,3 +114,6 @@ void borrarNodosListaStrings(ListaStrings &lista)
         borrarNodosListaStrings(lista);
     }
 }
+
+
+

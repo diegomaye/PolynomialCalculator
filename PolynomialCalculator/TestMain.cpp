@@ -2,7 +2,7 @@
 #include "TestTermino.h"
 #include "TestListaString.h"
 
-int main() {
+int main(){
    /*
     //PRUEBAS DE TODOS LOS MENSAJES DE ERROR:
     probarTodosMensajesDeError();
@@ -43,7 +43,21 @@ int main() {
     printf("Prueba probarEvaluarTerminoNulo(): \n");
     probarEvaluarTerminoNulo();
     */
+    printf("PRUEBAS PARA LA LISTA DE STRING////////////// \n");
 
-
+    /*
+    printf("\nPRUEBA LISTA VACIA: ");
+    probarListaVacia();
+    printf("\nPRUEBA INSERTAR ELEMENTOS EN LA LISTA");
+    probarInsertarListaString();
+    printf("\nPRUEBA CONTAR LA CANTIDAD DE ELEMENTOS DE LA LISTA");
+    probarContarElementosListaString();
+    printf("\nPRUEBA DAR LISTA SEPARADA POR ESPACIOS");
+    probarDarListaSeparadaPorEspacios();
+    printf("\nPRUEBA DAR STRING EN UNA POSICION");
+    probarStringEnPosicionLista();
+    */
+    printf("\nPREUEBA BORRAR DATOS DE LA LISTA");
+    probarBorrarListaString();
 }
 

@@ -14,15 +14,13 @@
 #include "String.h"
 #include "Terminos.h"
 
-void probarMostarTerminosL1(ListaTerminos terminos);
-void probarMostarTerminosL2(ListaTerminos terminos);
-void probarMostarTerminosL3(ListaTerminos terminos);
-/*Prueba mostrar termino con los polinomios mokeados.*/
+void mockTerminosPruebaInsert(ListaTerminos &terminosL1, ListaTerminos &terminosL2, ListaTerminos &terminosL3);
+//Mock para terminos.
 
 void probarInsertarTerminoAlFinal(ListaTerminos &terminos);
 void probarInsertarTerminoEnElMedio(ListaTerminos &terminos);
 void probarInsertarTerminoAlPrincipio(ListaTerminos &terminos);
-void probarInsertarTerminoEnListaVacia(ListaTerminos &terminos);
+void probarInsertarTerminoEnListaVacia();
 /*Prueba insertar terminos con exponente excedido, con exponente menor, etc.*/
 
 void probarInsBack(ListaTerminos &terminos);
@@ -46,25 +44,25 @@ void probarBorrarTerminoAlFinal(ListaTerminos &terminos);
 void probarPrimerTermino(ListaTerminos terminos);
 /*Prueba mostar primer termino de polinomio con primerTermino(...)*/
 
-void sumarTerminos(ListaTerminos terminos1, ListaTerminos terminos2, ListaTerminos &terminosResultadoSuma);
+void probarSumarTerminos(ListaTerminos terminos1, ListaTerminos terminos2);
 /*Dados dos términos devuelve en “terminosResultadoSuma” el resultado de la suma*/
-void multiplicarTerminos(ListaTerminos terminos1, ListaTerminos terminos2, ListaTerminos &terminosResultadoMultiplicacion);
+void probarMultiplicarTerminos(ListaTerminos terminos1, ListaTerminos terminos2);
 /*Dados dos términos devuelve en “terminosResultadoMutiplicacion” el resultado de la multiplicación*/
 
-int evaluarTerminos(ListaTerminos terminos, int evaluar);
+int probarEvaluarTerminos(ListaTerminos terminos, int evaluar);
 /*Dada la lista de términos ingresada se reemplaza los términos por el término pasado por parámetro.*/
-Boolean esRaizTerminos(ListaTerminos terminos, int raiz);
+Boolean probarEsRaizTerminos(ListaTerminos terminos, int raiz);
 /*Dado un entero, devuelve true si es raiz*/
 
-Termino ultimaTerminoAgregado(ListaTerminos terminos);
+Termino probarUltimaTerminoAgregado(ListaTerminos terminos);
 /*Devuelve el último término ingresado*/
 /*PRECONDICION: La lista tiene al menos un elemento.*/
-Boolean listaVacia(ListaTerminos terminos);
+Boolean probarListaVacia(ListaTerminos terminos);
 /*Devuelve true si la lista de términos es vacía*/
-void borrarNodosListaTerminos(ListaTerminos &terminos);
+void probarBorrarNodosListaTerminos(ListaTerminos &terminos);
 /*Borra todos los nodos de la Lista de términos*/
 
-void normalizarTerminos(ListaTerminos &terminos);
+void probarNormalizarTerminos(ListaTerminos &terminos);
 /*Normaliza la lista de términos eliminando términos con coeficiente cero - es un procedimiento recursivo*/
 /*PRECONDICION: La lista de términos debe tener más de un término */
 

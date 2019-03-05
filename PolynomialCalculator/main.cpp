@@ -11,9 +11,6 @@
 #include "Parser.h"
 #include "ListaStrings.h"
 
-const char* ARCHIVO_EXPEDIENTES = "expedientes.dat";
-const char* ARCHIVO_REVISIONES = "revisiones.dat";
-
 int main() {
     
 }

@@ -205,8 +205,7 @@ void normalizarTerminos(ListaTerminos &terminos){
     }
 }
 
-void bajarTerminos(ListaTerminos terminos, const char* nomArch){
-    FILE * f = fopen (nomArch, "wb");
+void bajarTerminos(ListaTerminos terminos, FILE * f){
     while (terminos != NULL) {
         bajarTermino(terminos -> termino, f);
         terminos = terminos -> sig;
@@ -214,8 +213,7 @@ void bajarTerminos(ListaTerminos terminos, const char* nomArch){
     fclose (f);
 }
 
-void levantarTerminos(ListaTerminos &terminos, const char* nomArch){
-    FILE * f = fopen (nomArch, "rb");
+void levantarTerminos(ListaTerminos &terminos, FILE * f){
     Termino termino;
     levantarTermino(termino, f);
     while (!feof(f)) {

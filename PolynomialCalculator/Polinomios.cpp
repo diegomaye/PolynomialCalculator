@@ -8,6 +8,10 @@
 
 #include "Polinomios.h"
 
+void crearArbolPolinomios(ABBPolinomios &polinomios){
+    polinomios=NULL;
+}
+
 void insertarPolinomio(ABBPolinomios &arbolPolinomios, Polinomio polinomio) {
     if (!existeAlMenosUnPolinomioEnABB(arbolPolinomios)) {
         arbolPolinomios = new Nodo;

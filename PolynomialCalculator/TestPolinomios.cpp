@@ -1,11 +1,15 @@
 #include "TestPolinomios.h"
 
-void mockPolinomioPruebaInsert(Polinomio &polinomio, String nombre) {
-    ListaTerminos mockListaTerminos;
+void mockPolinomioPruebaInsert(Polinomio &polinomio, String nombre, Polinomio &polinomio2, String nombre2) {
+    ListaTerminos mockListaTerminos = NULL;
     insertarTermino(mockListaTerminos, mockTermino1);
     insertarTermino(mockListaTerminos, mockTermino2);
     insertarTermino(mockListaTerminos, mockTermino3);
     cargarPolinomio(polinomio, nombre, mockListaTerminos);
+    ListaTerminos mockListaTerminos2 = NULL;
+    insertarTermino(mockListaTerminos2, mockTermino4);
+    insertarTermino(mockListaTerminos2, mockTermino5);
+    cargarPolinomio(polinomio2, nombre2, mockListaTerminos2);
 }
 
 void pruebaCrearABBPolinomios(ABBPolinomios &abb) {
@@ -18,7 +22,8 @@ void pruebaCrearABBPolinomios(ABBPolinomios &abb) {
 
 void pruebaInsertarPolinomio(ABBPolinomios &abb) {
     Polinomio mockPolinomio;
-    mockPolinomioPruebaInsert(mockPolinomio, mockNombre);
+    Polinomio mockOtroPolinomio;
+    mockPolinomioPruebaInsert(mockPolinomio, mockNombre, mockOtroPolinomio, mockOtroNombre);
     printf("Polinomio antes de insertar en ABB de polinomios vacio:\n");
     mostrarPolinomio(mockPolinomio);
     printEnter();
@@ -26,8 +31,6 @@ void pruebaInsertarPolinomio(ABBPolinomios &abb) {
     printf("ABB de polinomios luego de insertar un polinomio:\n");
     desplegarABB(abb);
     printEnter();
-    Polinomio mockOtroPolinomio;
-    mockPolinomioPruebaInsert(mockOtroPolinomio, mockOtroNombre);
     insertarPolinomio(abb, mockOtroPolinomio); //prueba con ABBPolinomios no vacio
     printf("ABB de polinomios luego de insertar otro polinomio:\n");
     desplegarABB(abb);
@@ -56,19 +59,19 @@ void pruebaExistePolinomioEnABB(ABBPolinomios abb) {
     printf("ABB de polinomios:\n");
     desplegarABB(abb);
     printEnter();
-    printf("El Polinomio ");
+    printf("El Polinomio con nombre '");
     print(mockNombre);
     if (existePolinomioEnABB(abb, mockNombre)) {
-        printf(" existe en el ABB de polinomios.\n");
+        printf("' existe en el ABB de polinomios.\n");
     } else {
-        printf(" no existe en el ABB de polinomios.\n");
+        printf("' no existe en el ABB de polinomios.\n");
     }
-    printf("El Polinomio ");
+    printf("El Polinomio con nombre '");
     print(mockNombreNegativo);
     if (existePolinomioEnABB(abb, mockNombreNegativo)) {
-        printf(" existe en el ABB de polinomios.\n");
+        printf("' existe en el ABB de polinomios.\n");
     } else {
-        printf(" no existe en el ABB de polinomios.\n");
+        printf("' no existe en el ABB de polinomios.\n");
     }
 }
 
@@ -114,26 +117,32 @@ void pruebaBuscarPolinomio(ABBPolinomios abb) {
     printEnter();
     printf("El siguiente polinomio:\n");
     Polinomio mockPolinomio;
-    mockPolinomioPruebaInsert(mockPolinomio, mockNombre);
+    Polinomio mockOtroPolinomio;
+    mockPolinomioPruebaInsert(mockPolinomio, mockNombre, mockOtroPolinomio, mockNombreNegativo);
     mostrarPolinomio(mockPolinomio);
     printEnter();
-    Polinomio pruebaPolinomio;
-    pruebaPolinomio = buscarPolinomio(abb, mockNombre);
-    if (polinomiosIgualNombre(mockPolinomio, pruebaPolinomio))
-        printf("Pertenece al ABB de polinomios.\n");
-    else
-        printf("No pertenece al ABB de polinomios.\n");
+    if (existePolinomioEnABB(abb, mockNombre)) {
+        Polinomio pruebaPolinomio;
+        pruebaPolinomio = buscarPolinomio(abb, mockNombre);
+        if (polinomiosIgualNombre(mockPolinomio, pruebaPolinomio))
+            printf("Pertenece al ABB de polinomios.\n");
+        else
+            printf("No pertenece al ABB de polinomios.\n");
+    } else
+          printf("No pertenece al ABB de polinomios.\n");
+
     printf("Y el siguiente polinomio:\n");
-    Polinomio mockOtroPolinomio;
-    mockPolinomioPruebaInsert(mockOtroPolinomio, mockNombreNegativo);
     mostrarPolinomio(mockOtroPolinomio);
     printEnter();
-    Polinomio pruebaOtroPolinomio;
-    pruebaOtroPolinomio = buscarPolinomio(abb, mockNombreNegativo);
-    if (polinomiosIgualNombre(mockOtroPolinomio, pruebaOtroPolinomio))
-        printf("Pertenece al ABB de polinomios.\n");
-    else
-        printf("No pertenece al ABB de polinomios.\n");
+    if (existePolinomioEnABB(abb, mockNombreNegativo)) {
+        Polinomio pruebaOtroPolinomio;
+        pruebaOtroPolinomio = buscarPolinomio(abb, mockNombreNegativo);
+        if (polinomiosIgualNombre(mockOtroPolinomio, pruebaOtroPolinomio))
+            printf("Pertenece al ABB de polinomios.\n");
+        else
+            printf("No pertenece al ABB de polinomios.\n");
+    } else
+          printf("No pertenece al ABB de polinomios.\n");
 }
 
 void pruebaEliminarABB(ABBPolinomios &abb) {

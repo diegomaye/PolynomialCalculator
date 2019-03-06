@@ -151,12 +151,27 @@ int main(){
     printf("Prueba crear ABB de polinomios \n");
     pruebaCrearABBPolinomios(arbolPolinomios);
     printEnter();
+    printf("Prueba insertar polinomio en ABB de polinomios \n");
     pruebaInsertarPolinomio(arbolPolinomios);
+    printEnter();
+    printf("Prueba existe al menos un polinomio en ABB de polinomios \n");
     pruebaExisteAlMenosUnPolinomioEnABB(arbolPolinomios);
+    printEnter();
+    printf("Prueba existe un polinomio dado en ABB de polinomios \n");
     pruebaExistePolinomioEnABB(arbolPolinomios);
+    printEnter();
+    printf("Prueba dar raiz de ABB de polinomios \n");
     pruebaDarRaiz(arbolPolinomios);
+    printEnter();
+    printf("Prueba dar hijo izquierdo de ABB de polinomios \n");
     pruebaDarIzquierdo(arbolPolinomios);
+    printEnter();
+    printf("Prueba dar hijo derecho de ABB de polinomios \n");
     pruebaDarDerecho(arbolPolinomios);
+    printEnter();
+    printf("Prueba buscar polinomio en ABB de polinomios \n");
     pruebaBuscarPolinomio(arbolPolinomios);
+    printEnter();
+    printf("Prueba eliminar ABB de polinomios \n");
     pruebaEliminarABB(arbolPolinomios);
 }

@@ -9,7 +9,8 @@
 #include "TestError.h"
 
 void probarTodosMensajesDeError(){
-    printf("///////////////// TESTS DE Error.v /////////////////");
+    printf("///////////////// TESTS DE Error.h /////////////////");
+    printEnter();
     print(mostrarError(FORMATO_POLINOMIO_INCORRECTO));
     printEnter();
     print(mostrarError(FORMATO_POLINOMIO_INCORRECTO));

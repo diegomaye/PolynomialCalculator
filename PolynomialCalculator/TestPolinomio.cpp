@@ -3,7 +3,6 @@
 //  PolynomialCalculator
 //
 //  Created by diegomaye on 2/28/19.
-//  Copyright © 2019 Code4Business. All rights reserved.
 //
 
 #include "TestPolinomio.h"

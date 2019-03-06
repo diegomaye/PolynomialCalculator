@@ -8,7 +8,7 @@
 
 #include "Termino.h"
 
-void mostrarTermino(Termino termino){
+void mostrarTermino(Termino termino){ /// x^1 mostrarlo simplemente como x
     if(termino.exponente == 0){
         if(termino.coeficiente != 0){
             if(termino.coeficiente < 0){
@@ -18,8 +18,16 @@ void mostrarTermino(Termino termino){
                 printf("+%d", termino.coeficiente);
             }
         }
-    }
-    else{
+    } else if(termino.exponente == 1) {
+        if(termino.coeficiente == -1)
+            printf("-x");
+        else if(termino.coeficiente == 1)
+            printf("+x");
+        else if(termino.coeficiente < 0)
+            printf("%dx", termino.coeficiente);
+        else
+            printf("+%dx", termino.coeficiente);
+    } else {
         if(termino.coeficiente != 0){
             if(termino.coeficiente == -1)
                 printf("-x^%d", termino.exponente);
@@ -47,6 +55,13 @@ void cargarCoeficienteTermino(Termino &termino, int coeficiente){
 
 void cargarExponenteTermino(Termino &termino, int exponente){
     termino.exponente = exponente;
+}
+
+Boolean terminoMayorGrado(Termino termino1, Termino termino2){
+    if(termino1.exponente > termino2.exponente)
+        return TRUE;
+    else
+        return FALSE;
 }
 
 /*OPERACIONES DE TERMINO*/

@@ -38,7 +38,7 @@ void scan(String &s);
 Boolean strmen(String s1, String s2);
 /*determina si s1 es alfabeticamente menor que s2*/
 Boolean strreq(String s1, String s2);
-/*determina si los sctring son iguales*/
+/*determina si los strings son iguales*/
 void strcop(String &s1, String s2);
 /*copia el segmento en el primero*/
 void strcon(String &s1, String s2);
@@ -53,14 +53,14 @@ int convertirANumero(String s);
 /*devuelve int con el valor del string*/
 Boolean validarExtension(String nombreArchivo);
 /*devuelve true si el nombre y la extensión son correctos*/
-
+Boolean cantidadPuntosEnString(String s);
 
 
 //Almacenamiento
 void toString(String s, FILE * f);
 /*dado un string y un archivo, almacena el string en un archivo*/
 void fromString(String &s, FILE * f);
-/*dado un archivo y un string pasado por valor, carga en el string el contenido del archivo*/
+/*dado un archivo y un string pasado por referencia, carga en el string el contenido del archivo*/
 
 #endif /* String_h */
 

@@ -33,6 +33,8 @@ Boolean esRaizPolinomio(Polinomio polinomio, int raiz);
 /*Devuelve TRUE si el valor ingresado en raiz devuelve 0 al ejecutar evaluarPolinomio, con el mismo polinomio y evaluar = resultado*/
 void darNombrePolinomio(Polinomio polinomio, String &nombre);
 /*Dado un polinomio devuelve el nombre del mismo cargado en la variable nombre*/
+void darTerminosPolinomio(Polinomio polinomio, ListaTerminos &terminos);
+/*Dado un polinomio devuelve todos los termions de este polinomio.*/
 Boolean polinomioConMasTerminos(Polinomio pol1, Polinomio pol2);
 /*determina si pol1 tiene más cantidad de términos que pol2*/
 Boolean polinomiosIgualNombre(Polinomio pol1, Polinomio pol2);
@@ -46,12 +48,7 @@ void borrarPolinomio(Polinomio &polinomio);
 
 void bajarPolinomio(Polinomio polinomio, FILE * f);
 /*dado un polinomio se escribe este en un archivo*/
-
 void levantarPolinomio(Polinomio &polinomio, FILE * f);
 /*dado el nombre de un polinomio se levanta el archivo correspondiente a ese nombre y se carga en polinomio*/
-
-Boolean existePolinomioEnArchivo(Polinomio polinomio);
-/*dado un polinomio verifica si el polinomio si existe un archivo con ese nombre de polinomio*/
-
 
 #endif /* Polinomio_h */

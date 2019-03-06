@@ -2,8 +2,7 @@
 //  Polinomio.cpp
 //  PolynomialCalculator
 //
-//  Created by diegomaye on 2/15/19.
-//  Copyright © 2019 Code4Business. All rights reserved.
+//  Created by Diego, Rodrigo & Pablo.
 //
 
 #include "Polinomio.h"
@@ -69,16 +68,14 @@ void borrarPolinomio(Polinomio &polinomio){
     borrarNodosListaTerminos(polinomio.terminos);
 }
 
-void bajarPolinomio(Polinomio polinomio, FILE * f){
-    //????????????
+void bajarTerminosPolinomio(Polinomio polinomio, String nomArch){
+    FILE * f = fopen (nomArch, "wb");
+    bajarTerminos(polinomio.terminos, f);
+    fclose (f);
 }
 
-void levantarPolinomio(Polinomio &polinomio, FILE * f){
-    //????????????
+void levantarTerminosPolinomio(Polinomio &polinomio, String nomArch){
+    FILE * f = fopen (nomArch, "rb");
+    levantarTerminos(polinomio.terminos, f);
+    fclose (f);
 }
-
-Boolean existePolinomioEnArchivo(Polinomio polinomio){
-    return TRUE;
-    //????????????
-}
-

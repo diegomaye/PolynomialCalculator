@@ -302,3 +302,4 @@ Boolean validarExtension(String nombreArchivo)
     }
     return resultado;
 }
+

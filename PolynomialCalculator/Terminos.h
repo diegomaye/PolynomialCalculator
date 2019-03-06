@@ -2,8 +2,7 @@
 //  Terminos.h
 //  PolynomialCalculator
 //
-//  Created by diegomaye on 2/15/19.
-//  Copyright © 2019 Code4Business. All rights reserved.
+//  Created by Diego, Rodrigo & Pablo.
 //
 
 #ifndef Terminos_h
@@ -65,7 +64,7 @@ void normalizarTerminos(ListaTerminos &terminos);
 /*Normaliza la lista de términos eliminando términos con coeficiente cero - es un procedimiento recursivo*/
 /*PRECONDICION: La lista de términos debe tener más de un término */
 
-void bajarTerminos(ListaTerminos terminos, const char* nomArch);
-void levantarTerminos(ListaTerminos &terminos, const char* nomArch);
+void bajarTerminos(ListaTerminos terminos, FILE * fh);
+void levantarTerminos(ListaTerminos &terminos, FILE * f);
 
 #endif /* Terminos_h */

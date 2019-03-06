@@ -12,5 +12,5 @@
 #include "ListaStrings.h"
 
 int main() {
-    
+
 }

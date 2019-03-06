@@ -3,6 +3,9 @@
 #include "TestListaString.h"
 #include "TestTerminos.h"
 #include "TestPolinomio.h"
+#include "TestArchivo.h"
+#include "TestString.h"
+#include "TestPolinomios.h"
 
 ListaTerminos terminosL1 = NULL;
 ListaTerminos terminosL2 = NULL;
@@ -11,6 +14,7 @@ Polinomio polinomio1;
 Polinomio polinomio1Copia;
 Polinomio polinomio2;
 Polinomio polinomio3;
+ABBPolinomios arbolPolinomios;
 
 int main(){
     //PRUEBAS DE TODOS LOS MENSAJES DE ERROR:
@@ -68,14 +72,14 @@ int main(){
     printf("\nPREUEBA BORRAR DATOS DE LA LISTA");
     probarBorrarListaString();
     //PRUEBAS DE ARCHIVO:
-//    printf("///////////////// TESTS DE Archivo.h /////////////////\n");
-//    printEnter();
-//    printf("Prueba Existe Archivo 'probarExisteArchivo' \n");
-//    probarExisteArchivo();
-//    printEnter();
-//    printf("Prueba Crear Archivo 'probarCrearArchivo' \n");
-//    probarCrearArchivo();
-//    printEnter();
+    printf("///////////////// TESTS DE Archivo.h /////////////////\n");
+    printEnter();
+    printf("Prueba Existe Archivo 'probarExisteArchivo' \n");
+    probarExisteArchivo();
+    printEnter();
+    printf("Prueba Crear Archivo 'probarCrearArchivo' \n");
+    probarCrearArchivo();
+    printEnter();
     //PRUEBAS DE TERMINOS:
     printf("///////////////// TESTS DE Terminos.h ////////////////\n");
     printEnter();
@@ -103,7 +107,7 @@ int main(){
     printEnter();
     probarSumarTerminos(terminosL1, terminosL2);
     probarMultiplicarTerminos(terminosL2, terminosL3);
-    
+
     printf("///////////////// TESTS DE Polinomio.h ////////////////\n");
     mockPolinomiosPruebaCargar(polinomio1, polinomio2, polinomio3, terminosL1, terminosL2, terminosL3);
     polinomio1Copia = polinomio1;
@@ -141,4 +145,18 @@ int main(){
     printEnter();
     probarBorradoDePolinomio(polinomio1);
     printEnter();
+    //PRUEBAS DE ABB POLINOMIOS:
+    printf("///////////////// TESTS DE Polinomios.h /////////////////\n");
+    printEnter();
+    printf("Prueba crear ABB de polinomios \n");
+    pruebaCrearABBPolinomios(arbolPolinomios);
+    printEnter();
+    pruebaInsertarPolinomio(arbolPolinomios);
+    pruebaExisteAlMenosUnPolinomioEnABB(arbolPolinomios);
+    pruebaExistePolinomioEnABB(arbolPolinomios);
+    pruebaDarRaiz(arbolPolinomios);
+    pruebaDarIzquierdo(arbolPolinomios);
+    pruebaDarDerecho(arbolPolinomios);
+    pruebaBuscarPolinomio(arbolPolinomios);
+    pruebaEliminarABB(arbolPolinomios);
 }

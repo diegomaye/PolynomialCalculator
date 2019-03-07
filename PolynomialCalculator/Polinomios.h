@@ -19,6 +19,8 @@ typedef struct nodo_polinomio {
 
 typedef Nodo * ABBPolinomios;
 
+void crearABBPolinomios(ABBPolinomios &arbolPolinomios);
+//crea un árbol binario de búsqueda de polinomios
 void insertarPolinomio (ABBPolinomios &arbolPolinomios, Polinomio polinomio);
 //inserta un polinomio en el árbol binario de búsqueda de polinomios
 Boolean existeAlMenosUnPolinomioEnABB(ABBPolinomios arbolPolinomios);

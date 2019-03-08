@@ -18,6 +18,10 @@ void mostrarPolinomio(Polinomio polinomio){
     mostrarTerminos(polinomio.terminos);
 }
 
+void cargarNombrePolinomio(Polinomio &polinomio, String nombre){
+    polinomio.nombre = nombre;
+}
+
 void sumarPolinomios(Polinomio polinomio1, Polinomio polinomio2, Polinomio &resultado){
     if(mayorCantidadDeTerminos(polinomio1.terminos, polinomio2.terminos)){
         sumarTerminos(polinomio1.terminos, polinomio2.terminos, resultado.terminos);

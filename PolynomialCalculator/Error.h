@@ -31,7 +31,8 @@ typedef enum {
     FORMATO_ARCHIVO_INCORRECTO,
     NOMBRE_EXTENSION_INCORRECTO,
     EXISTE_ARCHIVO,
-    NO_EXISTE_ARCHIVO
+    NO_EXISTE_ARCHIVO,
+    COMANDO_INGRESADO_NO_EXISTE
 } Error;
 
 typedef struct { Error value; char * descripcion; } Mensaje;
@@ -55,7 +56,9 @@ const Mensaje listaErrores[] = {
     {FORMATO_ARCHIVO_INCORRECTO, "El formato del nombre del archivo no es correcto."},
     {NOMBRE_EXTENSION_INCORRECTO, "El nombre o la extensión no es correcto."},
     {EXISTE_ARCHIVO, "Desea sobreescribir el archivo?"},
-    {NO_EXISTE_ARCHIVO, "No existe un archivo en el disco con el nombre ingresado."}
+    {NO_EXISTE_ARCHIVO, "No existe un archivo en el disco con el nombre ingresado."},
+    {COMANDO_INGRESADO_NO_EXISTE, "El comando ingresado es incorrecto."}
+    
 };
 
 char* mostrarError(Error error);

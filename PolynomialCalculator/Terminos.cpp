@@ -7,6 +7,10 @@
 
 #include "Terminos.h"
 
+void crearListaTerminos(ListaTerminos &terminos){
+    terminos = NULL;
+}
+
 void mostrarTerminos(ListaTerminos terminos){
     while(terminos != NULL){
         mostrarTermino(terminos -> termino);

@@ -8,9 +8,18 @@
 #include "Parser.h"
 
 int main() {
+    
     String commando;
     ABBPolinomios polinomios;
     crearArbolPolinomios(polinomios);
+    printf("///////////////////////////////////////////////////////////////////////////\n");
+    printf("Bienvenido a PolynomialCalculator, con este sistema podras realizar crear\n");
+    printf("sumar, multiplicar y evaluar polinomios, asi como determinar si un numero\n");
+    printf("es raiz, en cualquier momento podras ver los polinomios en memoria, ademas\n");
+    printf("el sistema te permite almacenar los polinomios para utilizarlos en futuras\n");
+    printf("calculos. \n");
+    printf("///////////////////////////////////////////////////////////////////////////\n");
+    printf("Ingresa el comando:\n");
     do{
         strcrear(commando);
         scan(commando);
@@ -18,24 +27,25 @@ int main() {
         crearListaString(commandos);
         darListaSeparadaPorEspacios(commando, commandos);
         darStringEnPosicion(commandos, 0, commando);
-        if(strreq(commando, CREAR)){
+        
+        if(strreq(commando, COMMANDO[CREAR])){
             crearPolinomio(polinomios, commandos);
-        } else if(strreq(commando, SUMAR)){
+        } else if(strreq(commando, COMMANDO[SUMAR])){
             sumarPolinomios(polinomios, commandos);
-        } else if(strreq(commando, MULTIPLICAR)){
+        } else if(strreq(commando, COMMANDO[MULTIPLICAR])){
             multiplicarPolinomios(polinomios, commandos);
-        } else if(strreq(commando, EVALUAR)){
+        } else if(strreq(commando, COMMANDO[EVALUAR])){
             evalarPolinomio(polinomios, commandos);
-        } else if(strreq(commando, ESRAIZ)){
+        } else if(strreq(commando, COMMANDO[ESRAIZ])){
             esraizPolinomio(polinomios, commandos);
-        } else if(strreq(commando, MOSTRAR)){
+        } else if(strreq(commando, COMMANDO[MOSTRAR])){
             mostrarPolinomio(polinomios, commandos);
-        } else if(strreq(commando, GUARDAR)){
+        } else if(strreq(commando, COMMANDO[GUARDAR])){
             guardarPolinomio(polinomios, commandos);
-        } else if(strreq(commando, RECUPERAR)){
+        } else if(strreq(commando, COMMANDO[RECUPERAR])){
             recuperarPolinomio(polinomios, commandos);
         } else {
-            printf("Comando erroneo");//TODO: Revisar documentacion y poner comando correcto.
+            print(mostrarError(COMANDO_INGRESADO_NO_EXISTE));
         }
-    } while (strreq(commando, SALIR));
+    } while (!strreq(commando, COMMANDO[SALIR]));
 }

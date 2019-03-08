@@ -23,7 +23,21 @@ typedef enum {
     MOSTRAR,
     GUARDAR,
     RECUPERAR,
-    SALIR} Comando;
+    SALIR
+} Comando;
+
+
+static const String COMMANDO[] = {
+    "crear",
+    "sumar\0",
+    "multiplicar\0",
+    "evaluar\0",
+    "esRaiz\0",
+    "mostrar\0",
+    "guardar\0",
+    "recuperar\0",
+    "salir\0"
+};
 
 void invocarComando(Comando com, ListaStrings &lista, ABBPolinomios &polinomios);
 

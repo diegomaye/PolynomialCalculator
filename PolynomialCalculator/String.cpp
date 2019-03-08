@@ -11,7 +11,7 @@
 void strcrear(String &s)
 {
     s = new char[1];
-    s[0]='\0';
+    s[0]=VACIO;
 }
 
 void strdestruir(String &s)
@@ -23,7 +23,7 @@ void strdestruir(String &s)
 int strlar(String s)
 {
     int i=0;
-    while(s[i] != '\0')
+    while(s[i] != VACIO)
         i++;
     return i;
 }
@@ -34,12 +34,12 @@ void strcop(String &s1,String s2)
     strdestruir(s1);
     s1= new char[largo+1];
     int i=0;
-    while(s2[i] != '\0')
+    while(s2[i] != VACIO)
     {
         s1[i]=s2[i];
         i++;
     }
-    s1[i]='\0';
+    s1[i]=VACIO;
 }
 
 void scan(String &s)
@@ -56,13 +56,13 @@ void scan(String &s)
 #else
     scanf(" %c",&c);
 #endif
-    while(c != '\n' && i<MAX-1)
+    while(c != ENTER && i<MAX-1)
     {
         aux[i]=c;
         i++;
         scanf("%c",&c);
     }
-    aux[i]='\0';
+    aux[i]=VACIO;
     strcop(s, aux);
     strdestruir(aux);
 }
@@ -78,18 +78,18 @@ void strcon(String &s1,String s2)
 
     aux= new char[cant];
 
-    while(i<MAX-1 && s1[i] != '\0')
+    while(i<MAX-1 && s1[i] != VACIO)
     {
         aux[i]=s1[i];
         i++;
     }
-    while(i<MAX-1 && s2[j] != '\0')
+    while(i<MAX-1 && s2[j] != VACIO)
     {
         aux[i]=s2[j];
         i++;
         j++;
     }
-    aux[i]='\0';
+    aux[i]=VACIO;
 
     strdestruir(s1);
     s1=aux;
@@ -107,7 +107,7 @@ void strswp(String &s1,String &s2)
 void print(String s)
 {
     int i=0;
-    while(s[i]!= '\0')
+    while(s[i]!= VACIO)
     {
         printf("%c",s[i]);
         i++;
@@ -117,7 +117,7 @@ void print(String s)
 void printIn(String s, int espacio)
 {
     int i=0;
-    while(s[i]!= '\0')
+    while(s[i]!= VACIO)
     {
         printf("%c",s[i]);
         i++;
@@ -134,7 +134,7 @@ void printSpaces(int espacio)
 
 void printEnter()
 {
-    printf("%c",'\n');
+    printf("%c",ENTER);
 }
 
 
@@ -142,7 +142,7 @@ Boolean strmen(String s1,String s2)
 {
     Boolean resu;
     int i=0;
-    while((s1[i]==s2[i]) && (s1[i] != '\0') && (s2[i] != '\0'))
+    while((s1[i]==s2[i]) && (s1[i] != VACIO) && (s2[i] != VACIO))
     {
         if(s1[i]==s2[i])
             i++;
@@ -164,7 +164,7 @@ Boolean strreq(String s1,String s2)
     Boolean resu;
     int i=0;
 
-    while((s1[i]==s2[i]) && (s1[i] != '\0') && (s2[i] != '\0'))
+    while((s1[i]==s2[i]) && (s1[i] != VACIO) && (s2[i] != VACIO))
     {
         if(s1[i]==s2[i])
             i++;
@@ -181,7 +181,7 @@ Boolean strreq(String s1,String s2)
 
 void toString(String s, FILE * f){
     int i=0;
-    while (s[i] != '\0') {
+    while (s[i] != VACIO) {
         fwrite (&s[i], sizeof(char), 1, f);
         i++;
     }
@@ -193,7 +193,7 @@ void fromString(String &s, FILE * f){
     String aux;
     aux = new char[MAX];
     fread (&aux[i], sizeof(char), 1, f);
-    while (!feof(f) && (aux[i] != '\0')) {
+    while (!feof(f) && (aux[i] != VACIO)) {
         i++;
         fread (&aux[i], sizeof(char), 1, f);
     }
@@ -205,7 +205,7 @@ Boolean esAlfanumerico(String s)
     int i=0;
     Boolean resultado=TRUE;
 
-    while(s[i] != '\0' && resultado)
+    while(s[i] != VACIO && resultado)
     {
         if(((s[i] >= 'a')&&(s[i]<='z'))||((s[i] >= 'A')&&(s[i]<='Z'))||((s[i]>='0')&&(s[i]<='9')))
          {
@@ -223,7 +223,7 @@ Boolean esNumerico(String s)
 {
     int i=0;
     Boolean resultado=TRUE;
-    while(s[i]!='\0' && resultado)
+    while(s[i]!=VACIO && resultado)
     {
         if((s[i]>='0')&&(s[i]<='9'))
             i++;
@@ -245,7 +245,7 @@ Boolean cantidadPuntosEnString(String s)
     Boolean cumplePuntos;
     int total=0;
     int i=0;
-    while(s[i] != '\0')
+    while(s[i] != VACIO)
     {
         if(s[i] == '.')
         {

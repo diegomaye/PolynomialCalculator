@@ -21,6 +21,8 @@ void cargarPolinomio(Polinomio &polinomio, String nombre, ListaTerminos listTerm
 /*Carga los datos del Polinomio*/
 void mostrarPolinomio(Polinomio polinomio);
 /*Muestra los datos del Polinomio por pantalla*/
+void cargarNombrePolinomio(Polinomio &polinomio, String nombre);
+/*Carga el nombre del polinomio*/
 void sumarPolinomios(Polinomio polinomio1, Polinomio polinomio2, Polinomio &resultado);
 /*Dados dos polinomios devuelve en “resultado” el polinomio resultante de la suma*/
 void multiplicarPolinomios(Polinomio polinomio1, Polinomio polinomio2, Polinomio &resultado);

@@ -19,6 +19,8 @@ typedef struct nodo_termino {
 
 typedef NodoTermino * ListaTerminos;
 
+void crearListaTerminos(ListaTerminos &terminos);
+/*Crea la lista de terminos igual a NULL.*/
 void mostrarTerminos(ListaTerminos terminos);
 /*Muestra todos los termions del polinomio por consola, ordenados en forma descendente por exponente.*/
 void insertarTermino(ListaTerminos &terminos, Termino termino);

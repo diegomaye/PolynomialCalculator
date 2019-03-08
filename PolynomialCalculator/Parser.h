@@ -14,15 +14,18 @@
 #include "Polinomios.h"
 #include "ListaStrings.h"
 
-const String CREAR = "crear";
-const String SUMAR = "sumar";
-const String MULTIPLICAR = "multiplicar";
-const String EVALUAR = "evalur";
-const String ESRAIZ = "esraiz";
-const String MOSTRAR = "mostrar";
-const String GUARDAR = "guardar";
-const String RECUPERAR = "recuperar";
-const String SALIR = "salir";
+typedef enum {
+    CREAR,
+    SUMAR,
+    MULTIPLICAR,
+    EVALUAR,
+    ESRAIZ,
+    MOSTRAR,
+    GUARDAR,
+    RECUPERAR,
+    SALIR} Comando;
+
+void invocarComando(Comando com, ListaStrings &lista, ABBPolinomios &polinomios);
 
 void crearPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
 
@@ -39,5 +42,7 @@ void mostrarPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
 void guardarPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
 
 void recuperarPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
+
+void salir(ABBPolinomios &polinomios);
 
 #endif /* Parser_h */

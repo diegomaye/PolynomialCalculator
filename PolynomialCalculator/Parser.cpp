@@ -39,7 +39,8 @@ void invocarComando(Comando com, ListaStrings &lista, ABBPolinomios &polinomios)
     }
 }
 
-void crearPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
+//CREARPOLINOMIO ANTERIOR - NO SEGUÍA LOS PASOS DEL PSEUDOCÓDIGO Y CARGA LOS EXPONENTES DE MENOR A MAYOR
+/*void crearPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
     String nombrePolinomio;
     strcrear(nombrePolinomio);
     darStringEnPosicion(comando, 1, nombrePolinomio);
@@ -60,7 +61,7 @@ void crearPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
                 if(coeficiente != 0){
                     Termino termino;
                     cargarCoeficienteTermino(termino, coeficiente);
-                    cargarExponenteTermino(termino, i);
+                    cargarExponenteTermino(termino, i); //ACA HAY UN PROBLEMA - SE CARGAN LOS EXPONENTES DE MENOR A MAYOR
                     insertarTermino(lstTerminos, termino);
                 }
             } else {
@@ -73,6 +74,65 @@ void crearPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
             cargarPolinomio(polinomio, nombrePolinomio, lstTerminos);
             insertarPolinomio(polinomios, polinomio);
             mostrarPolinomio(polinomio);
+        }
+    }
+}
+*/
+
+void crearPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
+    String nombrePolinomio;
+    strcrear(nombrePolinomio);
+    darStringEnPosicion(comando, 1, nombrePolinomio);
+    if(!esAlfanumerico(nombrePolinomio))
+        print(mostrarError(STRING_ALFANUMERICO));
+    else {
+        int elementos = contarElementos(comando)-2;//Se saca el nombre y el comando
+        if (elementos < 1)
+            print(mostrarError(CANTIDAD_PARAMETROS));
+        else {
+            int i = 0;
+            Boolean esNumero = TRUE;
+            String strCoeficiente;
+            strcrear(strCoeficiente);
+            while (i < elementos && esNumero) {
+                darStringEnPosicion(comando, i + 2, strCoeficiente);
+                esNumero = esNumerico(strCoeficiente);
+                i++;
+            }
+            if (!esNumero)
+                print(mostrarError(COEFICIENTE_NUMERICOS));
+            else {
+                String strCoeficiente;
+                strcrear(strCoeficiente);
+                darStringEnPosicion(comando, 2, strCoeficiente);
+                int coeficiente = convertirANumero(strCoeficiente);
+                if (coeficiente == 0 && elementos > 3)
+                    print(mostrarError(COEFICIENTE_CERO));
+                else {
+                    if (existePolinomioEnABB(polinomios, nombrePolinomio))
+                        print(mostrarError(POLINOMIO_EXISTENTE));
+                    else {
+                        Polinomio resultado;
+                        int exponente = elementos - 1;
+                        ListaTerminos lstTerminos;
+                        crearListaTerminos(lstTerminos);
+                        int j = 0;
+                        while (j < elementos) {
+                            Termino termino;
+                            cargarCoeficienteTermino(termino, coeficiente);
+                            cargarExponenteTermino(termino, exponente);
+                            insertarTermino(lstTerminos, termino);
+                            darStringEnPosicion(comando, j + 3, strCoeficiente);
+                            coeficiente = convertirANumero(strCoeficiente);
+                            j++;
+                            exponente--;
+                        }
+                        cargarPolinomio(resultado, nombrePolinomio, lstTerminos);
+                        insertarPolinomio(polinomios, resultado);
+                        mostrarPolinomio(resultado);
+                    }
+                }
+            }
         }
     }
 }

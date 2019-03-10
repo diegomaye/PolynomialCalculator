@@ -65,9 +65,11 @@ void darListaSeparadaPorEspacios(String strEntrada, ListaStrings &lstComando){
             i++;
             largo++;
         }
-        devolverStringConLargoEnPosicion(nuevoString, strEntrada, largo, i);
-        insertarElementoListaString(lstComando, nuevoString);
-        largo=0;
+        if (largo > 0) {
+            devolverStringConLargoEnPosicion(nuevoString, strEntrada, largo, i);
+            insertarElementoListaString(lstComando, nuevoString);
+            largo=0;
+        }
     }
 }
 

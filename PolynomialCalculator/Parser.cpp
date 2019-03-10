@@ -127,6 +127,7 @@ void crearPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
                             j++;
                             exponente--;
                         }
+                        normalizarTerminos(lstTerminos);
                         cargarPolinomio(resultado, nombrePolinomio, lstTerminos);
                         insertarPolinomio(polinomios, resultado);
                         mostrarPolinomio(resultado);

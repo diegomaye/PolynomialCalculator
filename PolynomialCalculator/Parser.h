@@ -59,4 +59,8 @@ void recuperarPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
 
 void salir(ABBPolinomios &polinomios);
 
+/*Funciones de soporte para validaciones*/
+Boolean sonNombreValidos(ListaStrings comando, String &nombrePolinomio1, String &nombrePolinomio2, String &nombreResultado);
+Boolean existen(ABBPolinomios arbol, String nombrePolinomio1, String nombrePolinomio2);
+
 #endif /* Parser_h */

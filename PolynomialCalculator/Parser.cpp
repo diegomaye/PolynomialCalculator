@@ -138,17 +138,65 @@ void crearPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
 }
 
 void sumarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
-    String nombrePolinomio1, nombrePolinomio2, nombreResultado;
-    darStringEnPosicion(comando, 1, nombrePolinomio1);
-    darStringEnPosicion(comando, 2, nombrePolinomio2);
-    darStringEnPosicion(comando, 3, nombreResultado);
-    Polinomio polinomio1 = buscarPolinomio(polinomios, nombrePolinomio1);
-    Polinomio polinomio2 = buscarPolinomio(polinomios, nombrePolinomio2);
-    Polinomio resultado;
-    cargarNombrePolinomio(resultado, nombreResultado);
-    sumarPolinomios(polinomio1, polinomio2, resultado);
-    insertarPolinomio(polinomios, resultado);
-    mostrarPolinomio(resultado);
+    int elementos = contarElementos(comando) - 1;//Se saca el comando
+    if (elementos != 3)
+        print(mostrarError(CANTIDAD_PARAMETROS));
+    else {
+        String nombrePolinomio1, nombrePolinomio2, nombreResultado;
+        Boolean nombresValidos = sonNombreValidos(comando, nombrePolinomio1, nombrePolinomio2, nombreResultado);
+        if(nombresValidos){
+            if(existen(polinomios, nombrePolinomio1, nombrePolinomio2)){
+                if(existePolinomioEnABB(polinomios, nombreResultado)){
+                    print(mostrarError(POLINOMIO_EXISTENTE));
+                } else {
+                    Polinomio polinomio1 = buscarPolinomio(polinomios, nombrePolinomio1);
+                    Polinomio polinomio2 = buscarPolinomio(polinomios, nombrePolinomio2);
+                    Polinomio resultado;
+                    cargarNombrePolinomio(resultado, nombreResultado);
+                    sumarPolinomios(polinomio1, polinomio2, resultado);
+                    insertarPolinomio(polinomios, resultado);
+                    mostrarPolinomio(resultado);
+                }
+            }
+        }
+    }
+}
+
+Boolean sonNombreValidos(ListaStrings comando, String &nombrePolinomio1, String &nombrePolinomio2, String &nombreResultado){
+    strcrear(nombrePolinomio1);
+    Boolean nombreValidos = FALSE;
+    darStringEnPosicion(comando, 2, nombrePolinomio1);
+    if(!esAlfanumerico(nombrePolinomio1))
+        print(mostrarError(STRING_ALFANUMERICO1));
+    else {
+        strcrear(nombrePolinomio2);
+        darStringEnPosicion(comando, 3, nombrePolinomio2);
+        if(!esAlfanumerico(nombrePolinomio2))
+            print(mostrarError(STRING_ALFANUMERICO2));
+        else {
+            strcrear(nombreResultado);
+            darStringEnPosicion(comando, 1, nombreResultado);
+            if(!esAlfanumerico(nombreResultado))
+                print(mostrarError(STRING_ALFANUMERICO3));
+            else {
+                nombreValidos = TRUE;
+            }
+        }
+    }
+    return nombreValidos;
+}
+
+Boolean existen(ABBPolinomios arbol, String nombrePolinomio1, String nombrePolinomio2){
+    if(!existePolinomioEnABB(arbol, nombrePolinomio1))
+        print(mostrarError(POLINOMIO_NO_EXISTENTE1));
+    else {
+        if(!existePolinomioEnABB(arbol, nombrePolinomio1))
+            print(mostrarError(POLINOMIO_NO_EXISTENTE2));
+        else {
+            return TRUE;
+        }
+    }
+    return FALSE;
 }
 
 void multiplicarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {

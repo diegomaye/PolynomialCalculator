@@ -219,7 +219,7 @@ Boolean esAlfanumerico(String s)
     return resultado;
 }
 
-Boolean esNumerico(String s)
+Boolean esNumerico(String s) // TODO: VERIFICAR TAMBIEN QUE PUEDA SER UN NUMERO NEGATIVOtr
 {
     int i=0;
     Boolean resultado=TRUE;

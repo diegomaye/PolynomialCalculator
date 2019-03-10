@@ -82,7 +82,7 @@ void sumarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
     darStringEnPosicion(comando, 1, nombrePolinomio1);
     darStringEnPosicion(comando, 2, nombrePolinomio2);
     darStringEnPosicion(comando, 3, nombreResultado);
-    Polinomio polinomio1 = buscarPolinomio(polinomios, nombrePolinomio1);//TODO: DEVUELVE UN POLINOMIO???
+    Polinomio polinomio1 = buscarPolinomio(polinomios, nombrePolinomio1);
     Polinomio polinomio2 = buscarPolinomio(polinomios, nombrePolinomio2);
     Polinomio resultado;
     cargarNombrePolinomio(resultado, nombreResultado);
@@ -148,7 +148,8 @@ void guardarPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
     darStringEnPosicion(comando, 1, nombrePolinomio);
     darStringEnPosicion(comando, 2, nombreArchivo);
     Polinomio polinomio = buscarPolinomio(polinomios, nombrePolinomio);
-    bajarPolinomio(polinomio, crearArchivo(nombreArchivo));//TODO: TODO BIEN?
+    //bajarPolinomio(polinomio, crearArchivo(nombreArchivo));//TODO: TODO BIEN? Respuesta: lo cambiamos por bajarTerminosPolinomio
+    bajarTerminosPolinomio(polinomio, nombreArchivo);
     printf("Polinomio almacenado correctamente en ");
     print(nombreArchivo);
     printEnter();
@@ -161,8 +162,9 @@ void recuperarPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
     darStringEnPosicion(comando, 2, nombreArchivo);
     Polinomio polinomio;
     cargarPolinomio(polinomio, nombreArchivo, NULL);
-    FILE * file = fopen(nombreArchivo, "wd");//TODO: mm no iriia aca...
-    levantarPolinomio(polinomio, file);
+    //FILE * file = fopen(nombreArchivo, "wd");//TODO: mm no iriia aca...
+    //levantarPolinomio(polinomio, file); idem antes
+    levantarTerminosPolinomio(polinomio, nombreArchivo);
     mostrarPolinomio(polinomio);
 }
 

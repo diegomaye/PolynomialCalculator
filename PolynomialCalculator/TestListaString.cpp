@@ -137,9 +137,4 @@ void probarBorrarListaString()
             ls=ls->sig;
         }
     }
-
-
-
-
-
 }

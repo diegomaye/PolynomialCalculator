@@ -28,7 +28,7 @@ typedef enum {
 
 
 static const String COMMANDO[] = {
-    "crear",
+    "crear\0",
     "sumar\0",
     "multiplicar\0",
     "evaluar\0",

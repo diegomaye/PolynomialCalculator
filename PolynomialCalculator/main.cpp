@@ -8,7 +8,7 @@
 #include "Parser.h"
 
 int main() {
-    
+
     String commando;
     ABBPolinomios polinomios;
     crearArbolPolinomios(polinomios);
@@ -27,7 +27,7 @@ int main() {
         crearListaString(commandos);
         darListaSeparadaPorEspacios(commando, commandos);
         darStringEnPosicion(commandos, 0, commando);
-        
+
         if(strreq(commando, COMMANDO[CREAR])){
             crearPolinomio(polinomios, commandos);
         } else if(strreq(commando, COMMANDO[SUMAR])){
@@ -44,6 +44,8 @@ int main() {
             guardarPolinomio(polinomios, commandos);
         } else if(strreq(commando, COMMANDO[RECUPERAR])){
             recuperarPolinomio(polinomios, commandos);
+        } else if(strreq(commando, COMMANDO[SALIR])){
+            salir(polinomios);
         } else {
             print(mostrarError(COMANDO_INGRESADO_NO_EXISTE));
         }

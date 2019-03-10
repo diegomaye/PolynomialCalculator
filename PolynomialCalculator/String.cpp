@@ -221,11 +221,15 @@ Boolean esAlfanumerico(String s)
 
 Boolean esNumerico(String s) // TODO: VERIFICAR TAMBIEN QUE PUEDA SER UN NUMERO NEGATIVOtr
 {
-    int i=0;
+    int i = 0;
     Boolean resultado=TRUE;
+    if (s[i] == '-')
+        i = 1;
+    if (s[i] == VACIO)
+        resultado = FALSE;
     while(s[i]!=VACIO && resultado)
     {
-        if((s[i]>='0')&&(s[i]<='9'))
+        if((s[i]>='0') && (s[i]<='9'))
             i++;
         else
             resultado=FALSE;

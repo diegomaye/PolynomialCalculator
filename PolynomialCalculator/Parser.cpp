@@ -197,41 +197,12 @@ void multiplicarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
         }
     }
 }
-/*
-void evalarPolinomio(ABBPolinomios polinomios, ListaStrings comando) {
-    String nombrePolinomio;
-    strcrear(nombrePolinomio);
-    darStringEnPosicion(comando, 1, nombrePolinomio);
-    int elementos = contarElementos(comando) - 1;//Se saca el comando
-    if (elementos != 2)
-        print(mostrarError(CANTIDAD_PARAMETROS));
-    else {
-        if(!existePolinomioEnABB(polinomios, nombrePolinomio))//TODO: verificar previamente que el nombre es alfanumerico? no es necesario, no?
-            print(mostrarError(POLINOMIO_NO_EXISTENTE));
-        else{
-            Polinomio polinomio = buscarPolinomio(polinomios, nombrePolinomio);
-            String strEvaluar;
-            strcrear(strEvaluar);
-            darStringEnPosicion(comando, 2, strEvaluar);
-            Boolean esNumero = esNumerico(strEvaluar);
-            if(!esNumero){
-                print(mostrarError(VALOR_PARA_EVALUAR));
-            } else {
-                int evaluar = convertirANumero(strEvaluar);
-                int resultado = evaluarPolinomio(polinomio, evaluar);
-                printf("El resultado de evaluar ");
-                print(nombrePolinomio);
-                printf(" es %d\n", resultado);
-            }
-        }
-    }
-}
-*/
 
 void evalarPolinomio(ABBPolinomios polinomios, ListaStrings comando) {
     String nombrePolinomio;
     int resultado;
-    Boolean valida = validarEvaluarEsRaiz(polinomios, comando, nombrePolinomio, resultado);
+    Boolean valida = FALSE;
+    validarEvaluarEsRaiz(polinomios, comando, nombrePolinomio, resultado, valida);
     if(valida){
         printf("El resultado de evaluar ");
         print(nombrePolinomio);
@@ -242,7 +213,8 @@ void evalarPolinomio(ABBPolinomios polinomios, ListaStrings comando) {
 void esraizPolinomio(ABBPolinomios polinomios, ListaStrings comando) {
     String nombrePolinomio;
     int resultado;
-    Boolean valida = validarEvaluarEsRaiz(polinomios, comando, nombrePolinomio, resultado);
+    Boolean valida = FALSE;
+    validarEvaluarEsRaiz(polinomios, comando, nombrePolinomio, resultado, valida);
     if(valida){
         if(resultado == 0){
             printf("El valor ingresado es raiz del polinomio ");
@@ -329,7 +301,7 @@ void salir(ABBPolinomios &polinomios) {
     eliminarABB(polinomios);
 }
 
-Boolean validarEvaluarEsRaiz(ABBPolinomios polinomios, ListaStrings comando, String &nombrePolinomio, int &resultado){//TODO: Esta bien devolver un booleano o tendria que ser un parametro por referencia?
+void validarEvaluarEsRaiz(ABBPolinomios polinomios, ListaStrings comando, String &nombrePolinomio, int &resultado, Boolean &valida){//TODO: Esta bien devolver un booleano o tendria que ser un parametro por referencia?
     strcrear(nombrePolinomio);
     darStringEnPosicion(comando, 1, nombrePolinomio);
     int elementos = contarElementos(comando) - 1;//Se saca el comando
@@ -349,11 +321,10 @@ Boolean validarEvaluarEsRaiz(ABBPolinomios polinomios, ListaStrings comando, Str
             } else {
                 int evaluar = convertirANumero(strEvaluar);
                 resultado = evaluarPolinomio(polinomio, evaluar);
-                return TRUE;
+                valida = TRUE;
             }
         }
     }
-    return FALSE;
 }
 
 Boolean sonNombreValidos(ListaStrings comando, String &nombrePolinomio1, String &nombrePolinomio2, String &nombreResultado){

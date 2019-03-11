@@ -62,5 +62,5 @@ void salir(ABBPolinomios &polinomios);
 /*Funciones de soporte para validaciones*/
 Boolean sonNombreValidos(ListaStrings comando, String &nombrePolinomio1, String &nombrePolinomio2, String &nombreResultado);
 Boolean existen(ABBPolinomios arbol, String nombrePolinomio1, String nombrePolinomio2);
-Boolean validarEvaluarEsRaiz(ABBPolinomios polinomios, ListaStrings comando, String &nombrePolinomio, int &resultado);
+void validarEvaluarEsRaiz(ABBPolinomios polinomios, ListaStrings comando, String &nombrePolinomio, int &resultado, Boolean &valida);
 #endif /* Parser_h */

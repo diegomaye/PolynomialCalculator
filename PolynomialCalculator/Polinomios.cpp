@@ -8,8 +8,8 @@
 
 #include "Polinomios.h"
 
-void crearABBPolinomios(ABBPolinomios &arbolPolinomios) {
-    arbolPolinomios = NULL;
+void crearArbolPolinomios(ABBPolinomios &polinomios){
+    polinomios=NULL;
 }
 
 void insertarPolinomio(ABBPolinomios &arbolPolinomios, Polinomio polinomio) {

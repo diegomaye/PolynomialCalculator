@@ -14,8 +14,13 @@ void cargarPolinomio(Polinomio &polinomio, String nombre, ListaTerminos listTerm
 
 void mostrarPolinomio(Polinomio polinomio){
     print(polinomio.nombre);
-    printf("=");
+    printf(" = ");
     mostrarTerminos(polinomio.terminos);
+    printEnter();
+}
+
+void cargarNombrePolinomio(Polinomio &polinomio, String nombre){
+    polinomio.nombre = nombre;
 }
 
 void sumarPolinomios(Polinomio polinomio1, Polinomio polinomio2, Polinomio &resultado){
@@ -35,7 +40,7 @@ int evaluarPolinomio(Polinomio polinomio, int evaluar){
     return evaluarTerminos(polinomio.terminos, evaluar);
 }
 
-Boolean esRaizPolinomio(Polinomio polinomio, int raiz){
+Boolean esRaizPolinomio(Polinomio polinomio, int raiz){//TODO: ver de eliminar
     return esRaizTerminos(polinomio.terminos, raiz);
 }
 

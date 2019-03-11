@@ -21,6 +21,8 @@ void cargarPolinomio(Polinomio &polinomio, String nombre, ListaTerminos listTerm
 /*Carga los datos del Polinomio*/
 void mostrarPolinomio(Polinomio polinomio);
 /*Muestra los datos del Polinomio por pantalla*/
+void cargarNombrePolinomio(Polinomio &polinomio, String nombre);
+/*Carga el nombre del polinomio*/
 void sumarPolinomios(Polinomio polinomio1, Polinomio polinomio2, Polinomio &resultado);
 /*Dados dos polinomios devuelve en “resultado” el polinomio resultante de la suma*/
 void multiplicarPolinomios(Polinomio polinomio1, Polinomio polinomio2, Polinomio &resultado);
@@ -45,9 +47,13 @@ Boolean polinomioNulo(Polinomio pol);
 void borrarPolinomio(Polinomio &polinomio);
 /*dado un nombre de polinomio lo borra de la memoria*/
 
-void bajarPolinomio(Polinomio polinomio, FILE * f);
+void bajarTerminosPolinomio(Polinomio polinomio, String nomArch);
+
+void levantarTerminosPolinomio(Polinomio &polinomio, String nomArch);
+
+//void bajarPolinomio(Polinomio polinomio, FILE * f);
 /*dado un polinomio se escribe este en un archivo*/
-void levantarPolinomio(Polinomio &polinomio, FILE * f);
+//void levantarPolinomio(Polinomio &polinomio, FILE * f);
 /*dado el nombre de un polinomio se levanta el archivo correspondiente a ese nombre y se carga en polinomio*/
 
 #endif /* Polinomio_h */

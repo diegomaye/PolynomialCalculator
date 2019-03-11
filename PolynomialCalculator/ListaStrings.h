@@ -19,7 +19,7 @@ typedef struct nodo_string {
 typedef NodoString * ListaStrings;
 
 
-void crearListaString(ListaStrings &s);
+void crearListaString(ListaStrings &listaString);
 /*Crea una Lista de String vacia*/
 Boolean listaStringVacia(ListaStrings s);
 /*Devuelve TRUE si la lista de String es vacia*/
@@ -33,7 +33,7 @@ void darStringEnPosicion(ListaStrings lista, int posicion, String &s);
 /*dado un string y una posición  devuelve el string en esa posición de la lista*/
 void borrarNodosListaStrings(ListaStrings &lista);
 /*Borra todos los nodos de la Lista de String*/
-void strcopVariable(String &nuevoString,String strEntrada,int largo,int i);
+void devolverStringConLargoEnPosicion(String &nuevoString,String strEntrada,int largo,int i);
 
 
 

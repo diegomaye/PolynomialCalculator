@@ -120,3 +120,23 @@ void probarMultiplicarTerminos(ListaTerminos terminosL1, ListaTerminos terminosL
     printEnter();
     printEnter();
 }
+
+void probarBajarTerminos(ListaTerminos terminosL1)
+{
+    FILE * f = fopen("nombreArchivo.txt", "wb");
+    printf("PRUEBA DE BAJAR TERMINOS POR ARCHIVO ");
+    printEnter();
+    printf("ANTES DE BAJAR LOS TERMINOS: ");
+    printEnter();
+    mostrarTerminos(terminosL1);
+    printEnter();
+    bajarTerminos(terminosL1, f);
+    printf("DESPUES DE BAJAR Y LEVANTAR LOS TERMINOS: ");
+    printEnter();
+    FILE * F = fopen("nombreArchivo.txt", "rb");
+    ListaTerminos terminosL2;
+    crearListaTerminos(terminosL2);
+    levantarTerminos(terminosL2, f);
+    mostrarTerminos(terminosL2);
+    printEnter();
+}

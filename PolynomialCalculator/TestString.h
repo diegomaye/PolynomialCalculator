@@ -14,6 +14,14 @@ char * mockCantidadPuntosEnString = "alfa.beta";
 char * mockCantidadPuntosEnStringMayor = "alfa.beta.gamma";
 char * mockValidarExtension = "alfa.txt";
 char * mockNoValidarExtension = "alfa.jpg";
+const String mockNumerico = "1234";
+const String mockNoNumerico = "abcd";
+const String mockConvertirANumero = "1234";
+const String mockNoConvertirANumero = "1234";
+const String mockCantidadPuntosEnString = "alfa.beta";
+const String mockCantidadPuntosEnStringMayor = "alfa.beta.gamma";
+const String mockValidarExtension = "alfa.txt";
+const String mockNoValidarExtension = "alfa.jpg";
 
 
 void probarEsAlfanumerico();

@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include "Archivo.h"
 
-char * mockNombreArchivo = "pruebaArchivo.txt";
-char * mockNombreArchivoExiste = "pruebaArchivoExiste.txt";
+const char * const mockNombreArchivo = "pruebaArchivo.txt";
+const char * const mockNombreArchivoExiste = "pruebaArchivoExiste.txt";
 
 void probarExisteArchivo();
 void probarCrearArchivo();

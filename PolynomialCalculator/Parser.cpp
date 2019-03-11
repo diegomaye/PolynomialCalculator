@@ -367,6 +367,7 @@ void recuperarPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
 
 void salir(ABBPolinomios &polinomios) {
     eliminarABB(polinomios);
+    printf("Hasta la vista!");
 }
 
 void validarEvaluarEsRaiz(ABBPolinomios polinomios, ListaStrings comando, String &nombrePolinomio, int &resultado, Boolean &valida){//TODO: Esta bien devolver un booleano o tendria que ser un parametro por referencia?

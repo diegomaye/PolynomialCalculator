@@ -6,14 +6,6 @@
 
 const String mockAlfanumerico = "alfa1234";
 const String mockNoAlfanumerico = "alfa-1234";
-char * mockNumerico = "1234";
-char * mockNoNumerico = "abcd";
-char * mockConvertirANumero = "1234";
-char * mockNoConvertirANumero = "-1234";
-char * mockCantidadPuntosEnString = "alfa.beta";
-char * mockCantidadPuntosEnStringMayor = "alfa.beta.gamma";
-char * mockValidarExtension = "alfa.txt";
-char * mockNoValidarExtension = "alfa.jpg";
 const String mockNumerico = "1234";
 const String mockNoNumerico = "abcd";
 const String mockConvertirANumero = "1234";

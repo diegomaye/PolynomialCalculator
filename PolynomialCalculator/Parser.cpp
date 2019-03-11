@@ -98,6 +98,7 @@ void crearPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
     }
 }
 
+/* METODO ORIGINAL HECHO X DIEGO:
 void sumarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
     int elementos = contarElementos(comando) - 1;//Se saca el comando
     if (elementos != 3)
@@ -117,6 +118,55 @@ void sumarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
                     sumarPolinomios(polinomio1, polinomio2, resultado);
                     insertarPolinomio(polinomios, resultado);
                     mostrarPolinomio(resultado);
+                }
+            }
+        }
+    }
+}
+*/
+
+void sumarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
+    int elementos = contarElementos(comando) - 1;//Se saca el comando
+    if (elementos != 3)
+        print(mostrarError(CANTIDAD_PARAMETROS));
+    else {
+        String nombrePolinomio;
+        strcrear(nombrePolinomio);
+        darStringEnPosicion(comando, 1, nombrePolinomio);
+        if (!esAlfanumerico(nombrePolinomio))
+            print(mostrarError(STRING_ALFANUMERICO));
+        else {
+            if (existePolinomioEnABB(polinomios, nombrePolinomio))
+                print(mostrarError(POLINOMIO_EXISTENTE));
+            else {
+                String nombrePolinomioASumar;
+                strcrear(nombrePolinomioASumar);
+                darStringEnPosicion(comando, 2, nombrePolinomioASumar);
+                if (!existePolinomioEnABB(polinomios, nombrePolinomioASumar))
+                    print(mostrarError(POLINOMIO_NO_EXISTENTE));
+                else {
+                    String nombrePolinomioASumar2;
+                    strcrear(nombrePolinomioASumar2);
+                    darStringEnPosicion(comando, 3, nombrePolinomioASumar2);
+                    if (!existePolinomioEnABB(polinomios, nombrePolinomioASumar2))
+                        print(mostrarError(POLINOMIO_NO_EXISTENTE));
+                    else {
+                        Polinomio polinomio1 = buscarPolinomio(polinomios, nombrePolinomioASumar);
+                        Polinomio polinomio2 = buscarPolinomio(polinomios, nombrePolinomioASumar2);
+                        Polinomio resultado;
+                        if (polinomioNulo(polinomio1)) {
+                            ListaTerminos terminos = NULL;
+                            darTerminosPolinomio(polinomio2, terminos); // no deberia ser una función que devuelva ListaTerminos?
+                            cargarPolinomio(resultado, nombrePolinomio, terminos);
+                            insertarPolinomio(polinomios, resultado);
+                            mostrarPolinomio(resultado);
+                        } else {
+                            cargarNombrePolinomio(resultado, nombrePolinomio);
+                            sumarPolinomios(polinomio1, polinomio2, resultado);
+                            insertarPolinomio(polinomios, resultado);
+                            mostrarPolinomio(resultado);
+                        }
+                    }
                 }
             }
         }

@@ -173,6 +173,7 @@ void sumarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
     }
 }
 
+/* METODO ORIGINAL HECHO X DIEGO:
 void multiplicarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
     int elementos = contarElementos(comando) - 1;//Se saca el comando
     if (elementos != 3)
@@ -185,6 +186,43 @@ void multiplicarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
                 if(existePolinomioEnABB(polinomios, nombreResultado)){
                     print(mostrarError(POLINOMIO_EXISTENTE));
                 } else {
+                    Polinomio polinomio1 = buscarPolinomio(polinomios, nombrePolinomio1);
+                    Polinomio polinomio2 = buscarPolinomio(polinomios, nombrePolinomio2);
+                    Polinomio resultado;
+                    cargarNombrePolinomio(resultado, nombreResultado);
+                    multiplicarPolinomios(polinomio1, polinomio2, resultado);
+                    insertarPolinomio(polinomios, resultado);
+                    mostrarPolinomio(resultado);
+                }
+            }
+        }
+    }
+}
+*/
+
+void multiplicarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
+    int elementos = contarElementos(comando) - 1;//Se saca el comando
+    if (elementos != 3)
+        print(mostrarError(CANTIDAD_PARAMETROS_MULTILICACION));
+    else {
+        String nombreResultado;
+        strcrear(nombreResultado);
+        darStringEnPosicion(comando, 1, nombreResultado);
+        if (!esAlfanumerico(nombreResultado))
+            print(mostrarError(STRING_ALFANUMERICO));
+        else {
+            if (existePolinomioEnABB(polinomios, nombreResultado))
+                print(mostrarError(POLINOMIO_EXISTENTE));
+            else {
+                String nombrePolinomio1;
+                strcrear(nombrePolinomio1);
+                darStringEnPosicion(comando, 2, nombrePolinomio1);
+                String nombrePolinomio2;
+                strcrear(nombrePolinomio2);
+                darStringEnPosicion(comando, 3, nombrePolinomio2);
+                if (!existePolinomioEnABB(polinomios, nombrePolinomio1) || !existePolinomioEnABB(polinomios, nombrePolinomio2))
+                    print(mostrarError(POLINOMIOS_EXISTENTE_MULTIPLICACION));
+                else {
                     Polinomio polinomio1 = buscarPolinomio(polinomios, nombrePolinomio1);
                     Polinomio polinomio2 = buscarPolinomio(polinomios, nombrePolinomio2);
                     Polinomio resultado;

@@ -137,23 +137,25 @@ void multiplicarTerminosXTermino(ListaTerminos terminos, Termino termino, ListaT
 void multiplicarTerminos(ListaTerminos terminos1, ListaTerminos terminos2, ListaTerminos &resultado){
     if (terminos1 == NULL) {
         resultado = NULL;
-    } else if (contarTerminos(terminos1) == 1){
-        Termino termino = primerTermino(terminos1);
-        multiplicarTerminosXTermino(terminos2, termino, resultado);
-    } else {
-        Termino termino = primerTermino(terminos1);
-        ListaTerminos terminosMultiplicadosXTermino;
-        ListaTerminos terminosRetorno;
-        multiplicarTerminosXTermino(terminos2, termino, terminosMultiplicadosXTermino);
-        multiplicarTerminos(terminos1 -> sig, terminos2, terminosRetorno);
-        if(mayorCantidadDeTerminos(terminosMultiplicadosXTermino, terminosRetorno)){
-            sumarTerminos(terminosMultiplicadosXTermino, terminosRetorno, resultado);
+    } else if (terminos2 == NULL) {
+                resultado = NULL;
+        } else if (contarTerminos(terminos1) == 1){
+                Termino termino = primerTermino(terminos1);
+                multiplicarTerminosXTermino(terminos2, termino, resultado);
+            } else {
+                Termino termino = primerTermino(terminos1);
+                ListaTerminos terminosMultiplicadosXTermino;
+                ListaTerminos terminosRetorno;
+                multiplicarTerminosXTermino(terminos2, termino, terminosMultiplicadosXTermino);
+                multiplicarTerminos(terminos1 -> sig, terminos2, terminosRetorno);
+                if(mayorCantidadDeTerminos(terminosMultiplicadosXTermino, terminosRetorno)){
+                    sumarTerminos(terminosMultiplicadosXTermino, terminosRetorno, resultado);
+                }
+                else {
+                    sumarTerminos(terminosRetorno, terminosMultiplicadosXTermino, resultado);
+                }
+
         }
-        else {
-            sumarTerminos(terminosRetorno, terminosMultiplicadosXTermino, resultado);
-        }
-        
-    }
 }
 
 int evaluarTerminos(ListaTerminos terminos, int evaluar){

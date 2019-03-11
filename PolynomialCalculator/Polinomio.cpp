@@ -40,7 +40,7 @@ int evaluarPolinomio(Polinomio polinomio, int evaluar){
     return evaluarTerminos(polinomio.terminos, evaluar);
 }
 
-Boolean esRaizPolinomio(Polinomio polinomio, int raiz){
+Boolean esRaizPolinomio(Polinomio polinomio, int raiz){//TODO: ver de eliminar
     return esRaizTerminos(polinomio.terminos, raiz);
 }
 

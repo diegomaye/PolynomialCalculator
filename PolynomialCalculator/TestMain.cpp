@@ -103,7 +103,8 @@ int main(){
     printEnter();
     probarSumarTerminos(terminosL1, terminosL2);
     probarMultiplicarTerminos(terminosL2, terminosL3);
-    
+    probarBajarTerminos(terminosL1);
+    printEnter();
     printf("///////////////// TESTS DE Polinomio.h ////////////////\n");
     mockPolinomiosPruebaCargar(polinomio1, polinomio2, polinomio3, terminosL1, terminosL2, terminosL3);
     polinomio1Copia = polinomio1;

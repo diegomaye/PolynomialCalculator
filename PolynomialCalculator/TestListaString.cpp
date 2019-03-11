@@ -48,7 +48,7 @@ void probarDarListaSeparadaPorEspacios()
     crearListaString(lista);
     String entrada;
     strcrear(entrada);
-    entrada=" crear  1 22 3 4";
+    entrada=" crear  pepe 13";
     darListaSeparadaPorEspacios(entrada,lista);
     printEnter();
     while(lista!= NULL)
@@ -67,7 +67,7 @@ void probarContarElementosListaString()
     int total;
     ListaStrings ls;
     crearListaString(ls);
-    /*String string1,string2,string3;
+    String string1,string2,string3;
     strcrear(string1);
     strcrear(string2);
     strcrear(string3);
@@ -76,7 +76,7 @@ void probarContarElementosListaString()
     string3="13";
     insertarElementoListaString(ls,string1);
     insertarElementoListaString(ls,string2);
-    insertarElementoListaString(ls,string3);*/
+    insertarElementoListaString(ls,string3);
     printEnter();
     total=contarElementos(ls);
     printf("\nLA CANTIDAD DE ELEMENTOS DE LA LISTA ES:%d",total);
@@ -90,7 +90,7 @@ void probarStringEnPosicionLista()
     crearListaString(ls);
     String string1;
     strcrear(string1);
-    string1="crear pepe 12 13 14";
+    string1="crear pepe 13";
     darListaSeparadaPorEspacios(string1,ls);
     insertarElementoListaString(ls,string1);
     printEnter();
@@ -104,7 +104,7 @@ void probarBorrarListaString()
     crearListaString(ls);
     String string1;
     strcrear(string1);
-    string1="crear pepe 12 ";
+    string1="crear pepe 10 30 ";
     darListaSeparadaPorEspacios(string1,ls);
     insertarElementoListaString(ls,string1);
     printEnter();

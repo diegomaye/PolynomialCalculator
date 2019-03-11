@@ -65,4 +65,7 @@ void probarNormalizarTerminos(ListaTerminos &terminos);
 /*Normaliza la lista de términos eliminando términos con coeficiente cero - es un procedimiento recursivo*/
 /*PRECONDICION: La lista de términos debe tener más de un término */
 
+void probarBajarTerminos(ListaTerminos terminosL1);
+/*Baja los terminos en un archivo*/
+
 #endif /* TestTerminos_hpp */

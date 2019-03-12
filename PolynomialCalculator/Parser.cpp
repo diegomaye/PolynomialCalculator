@@ -301,8 +301,10 @@ void mostrarPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
     int elementos = contarElementos(comando);//Se saca el comando
     if (elementos != 1)
         print(mostrarError(CANTIDAD_PARAMETROS));
-    else
-        desplegarABB(polinomios);
+    else if (!existeAlMenosUnPolinomioEnABB(polinomios))
+            print(mostrarError(POLINOMIO_NO_EXISTENTE_EN_MEMORIA));
+        else
+            desplegarABB(polinomios);
 }
 
 void guardarPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {

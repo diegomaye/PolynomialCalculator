@@ -19,8 +19,9 @@ int main() {
     printf("el sistema te permite almacenar los polinomios para utilizarlos en futuras\n");
     printf("calculos. \n");
     printf("///////////////////////////////////////////////////////////////////////////\n");
-    printf("Ingresa el comando:\n");
+
     do{
+        printf("Ingresa el comando:\n");
         strcrear(commando);
         scan(commando);
         ListaStrings commandos;

@@ -50,7 +50,7 @@ const Mensaje listaErrores[] = {
     {STRING_ALFANUMERICO1, "El nombre del Polinomio del primer parametro debe ser alfanumerico"},
     {CANTIDAD_PARAMETROS, "Cantidad incorrecta de parametros.\n"},
     {NOMBRE_INCORRECTO, "El formato del nombre del polinomio no es correcto.\n"},
-    {POLINOMIO_EXISTENTE, "El polinomio ha ser creado ya existe.\n"},
+    {POLINOMIO_EXISTENTE, "El polinomio a ser creado ya existe.\n"},
     {COEFICIENTE_CERO, "El primer coeficiente no puede ser cero.\n"},
     {FALTA_NOMBRE, "Cantidad de parametros incorrecta.\n"},
     {POLINOMIO_NO_EXISTENTE, "Polinomio ingresado no existe en el ABB.\n"},

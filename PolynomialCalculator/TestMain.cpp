@@ -1,3 +1,4 @@
+/*
 #include "TestError.h"
 #include "TestTermino.h"
 #include "TestListaString.h"
@@ -57,7 +58,7 @@ int main(){
     probarEvaluarTerminoNulo();
     printf("PRUEBAS PARA LA LISTA DE STRING////////////// \n");
 
-    /*
+
     printf("\nPRUEBA LISTA VACIA: ");
     probarListaVacia();
     printf("\nPRUEBA INSERTAR ELEMENTOS EN LA LISTA");
@@ -68,7 +69,7 @@ int main(){
     probarDarListaSeparadaPorEspacios();
     printf("\nPRUEBA DAR STRING EN UNA POSICION");
     probarStringEnPosicionLista();
-    */
+
     printf("\nPREUEBA BORRAR DATOS DE LA LISTA");
     probarBorrarListaString();
     //PRUEBAS DE ARCHIVO:
@@ -177,3 +178,4 @@ int main(){
     printf("Prueba eliminar ABB de polinomios \n");
     pruebaEliminarABB(arbolPolinomios);
 }
+*/

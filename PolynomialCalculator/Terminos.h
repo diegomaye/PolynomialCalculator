@@ -65,8 +65,9 @@ void borrarNodosListaTerminos(ListaTerminos &terminos);
 void normalizarTerminos(ListaTerminos &terminos);
 /*Normaliza la lista de términos eliminando términos con coeficiente cero - es un procedimiento recursivo*/
 /*PRECONDICION: La lista de términos debe tener más de un término */
-
 void bajarTerminos(ListaTerminos terminos, FILE * fh);
+/*Almacena los terminos en el archivo fh*/
 void levantarTerminos(ListaTerminos &terminos, FILE * f);
+/*Recupera los términos almacenado en el archivo f*/
 
 #endif /* Terminos_h */

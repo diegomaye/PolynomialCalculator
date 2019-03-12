@@ -46,7 +46,7 @@ const Mensaje listaErrores[] = {
     {FORMATO_POLINOMIO_INCORRECTO, "El formato del nombre del polinomio no es correcto.\n"},
     {STRING_ALFANUMERICO, "El nombre del Polinomio debe ser alfanumerico"},
     {STRING_ALFANUMERICO1, "El nombre del Polinomio del primer parametro debe ser alfanumerico"},
-    {CANTIDAD_PARAMETROS, "Cantidad de parametros incorrecta.\n"},
+    {CANTIDAD_PARAMETROS, "Cantidad incorrecta de parametros.\n"},
     {NOMBRE_INCORRECTO, "El formato del nombre del polinomio no es correcto.\n"},
     {POLINOMIO_EXISTENTE, "El polinomio ha ser creado ya existe.\n"},
     {COEFICIENTE_CERO, "El primer coeficiente no puede ser cero.\n"},

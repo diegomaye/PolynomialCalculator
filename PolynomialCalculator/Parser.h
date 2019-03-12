@@ -42,23 +42,29 @@ static const String COMMANDO[] = {
 void invocarComando(Comando com, ListaStrings &lista, ABBPolinomios &polinomios);
 
 void crearPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
+/*dado un comando, crea un polinomio en el ABB*/
 
 void sumarPolinomios(ABBPolinomios &polinomios, ListaStrings commando);
+/*dado un comando y dos polinomios, los suma*/
 
 void multiplicarPolinomios(ABBPolinomios &polinomios, ListaStrings commando);
+/*dado un comando y dos polinomios, los multiplica*/
 
 void evalarPolinomio(ABBPolinomios polinomios, ListaStrings commando);
+/*dado un comando y un polinomio, lo evalua*/
 
 void esraizPolinomio(ABBPolinomios polinomios, ListaStrings commando);
+/*dado un comando y un polinomio, determina si es raiz*/
 
 void mostrarPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
+/*dado un comando, lista todos los polinomios en pantalla*/
 
 void guardarPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
-
+/*dado un comando, guarda un polinomio en un archivo*/
 void recuperarPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
-
+/*dado un comando, recupera un archivo*/
 void salir(ABBPolinomios &polinomios);
-
+/*dado un comando, se sale del prpgrama*/
 /*Funciones de soporte para validaciones*/
 Boolean sonNombreValidos(ListaStrings comando, String &nombrePolinomio1, String &nombrePolinomio2, String &nombreResultado);
 Boolean existen(ABBPolinomios arbol, String nombrePolinomio1, String nombrePolinomio2);

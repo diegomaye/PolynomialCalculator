@@ -48,12 +48,8 @@ void borrarPolinomio(Polinomio &polinomio);
 /*dado un nombre de polinomio lo borra de la memoria*/
 
 void bajarTerminosPolinomio(Polinomio polinomio, String nomArch);
-
-void levantarTerminosPolinomio(Polinomio &polinomio, String nomArch);
-
-//void bajarPolinomio(Polinomio polinomio, FILE * f);
 /*dado un polinomio se escribe este en un archivo*/
-//void levantarPolinomio(Polinomio &polinomio, FILE * f);
+void levantarTerminosPolinomio(Polinomio &polinomio, String nomArch);
 /*dado el nombre de un polinomio se levanta el archivo correspondiente a ese nombre y se carga en polinomio*/
 
 #endif /* Polinomio_h */

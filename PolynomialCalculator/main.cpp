@@ -35,7 +35,7 @@ int main() {
         } else if(strreq(commando, COMMANDO[MULTIPLICAR])){
             multiplicarPolinomios(polinomios, commandos);
         } else if(strreq(commando, COMMANDO[EVALUAR])){
-            evalarPolinomio(polinomios, commandos);
+            evaluarPolinomio(polinomios, commandos);
         } else if(strreq(commando, COMMANDO[ESRAIZ])){
             esraizPolinomio(polinomios, commandos);
         } else if(strreq(commando, COMMANDO[MOSTRAR])){

@@ -19,7 +19,7 @@ void invocarComando(Comando com, ListaStrings &lista, ABBPolinomios &polinomios)
         multiplicarPolinomios(polinomios, lista);
         break;
     case EVALUAR:
-        evalarPolinomio(polinomios, lista);
+        evaluarPolinomio(polinomios, lista);
         break;
     case ESRAIZ:
         esraizPolinomio(polinomios, lista);
@@ -236,7 +236,7 @@ void multiplicarPolinomios(ABBPolinomios &polinomios, ListaStrings comando) {
     }
 }
 /*
-void evalarPolinomio(ABBPolinomios polinomios, ListaStrings comando) {
+void evaluarPolinomio(ABBPolinomios polinomios, ListaStrings comando) {
     String nombrePolinomio;
     strcrear(nombrePolinomio);
     darStringEnPosicion(comando, 1, nombrePolinomio);
@@ -266,7 +266,7 @@ void evalarPolinomio(ABBPolinomios polinomios, ListaStrings comando) {
 }
 */
 
-void evalarPolinomio(ABBPolinomios polinomios, ListaStrings comando) {
+void evaluarPolinomio(ABBPolinomios polinomios, ListaStrings comando) {
     String nombrePolinomio;
     int resultado;
     Boolean valida = FALSE;

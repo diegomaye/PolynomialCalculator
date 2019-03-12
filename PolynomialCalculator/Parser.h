@@ -47,7 +47,7 @@ void sumarPolinomios(ABBPolinomios &polinomios, ListaStrings commando);
 
 void multiplicarPolinomios(ABBPolinomios &polinomios, ListaStrings commando);
 
-void evalarPolinomio(ABBPolinomios polinomios, ListaStrings commando);
+void evaluarPolinomio(ABBPolinomios polinomios, ListaStrings commando);
 
 void esraizPolinomio(ABBPolinomios polinomios, ListaStrings commando);
 

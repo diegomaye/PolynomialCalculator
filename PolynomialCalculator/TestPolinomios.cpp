@@ -13,7 +13,7 @@ void mockPolinomioPruebaInsert(Polinomio &polinomio, String nombre, Polinomio &p
 }
 
 void pruebaCrearABBPolinomios(ABBPolinomios &abb) {
-    crearABBPolinomios(abb);
+    crearArbolPolinomios(abb);
     if (abb == NULL)
         printf("El ABB de polinomios fue creado exitosamente.\n");
     else
@@ -39,7 +39,7 @@ void pruebaInsertarPolinomio(ABBPolinomios &abb) {
 
 void pruebaExisteAlMenosUnPolinomioEnABB(ABBPolinomios abb) {
     ABBPolinomios mockPolinomios;
-    crearABBPolinomios(mockPolinomios);
+    crearArbolPolinomios(mockPolinomios);
     printf("Existe al menos un Polinomio en ABB de polinomios vacio:\n");
     if (existeAlMenosUnPolinomioEnABB(mockPolinomios))
         printf("Existe Polinomio en ABB de polinomios.\n");

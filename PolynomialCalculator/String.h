@@ -54,8 +54,6 @@ int convertirANumero(String s);
 Boolean validarExtension(String nombreArchivo);
 /*devuelve true si el nombre y la extensión son correctos*/
 Boolean cantidadPuntosEnString(String s);
-
-
 //Almacenamiento
 void toString(String s, FILE * f);
 /*dado un string y un archivo, almacena el string en un archivo*/

@@ -39,8 +39,6 @@ static const String COMMANDO[] = {
     "salir\0"
 };
 
-void invocarComando(Comando com, ListaStrings &lista, ABBPolinomios &polinomios);
-
 void crearPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
 /*dado un comando, crea un polinomio en el ABB*/
 
@@ -66,7 +64,7 @@ void recuperarPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
 void salir(ABBPolinomios &polinomios);
 /*dado un comando, se sale del prpgrama*/
 /*Funciones de soporte para validaciones*/
-Boolean sonNombreValidos(ListaStrings comando, String &nombrePolinomio1, String &nombrePolinomio2, String &nombreResultado);
 Boolean existen(ABBPolinomios arbol, String nombrePolinomio1, String nombrePolinomio2);
+/*dados dos polinomios, verifica que existan en el arbol*/
 void validarEvaluarEsRaiz(ABBPolinomios polinomios, ListaStrings comando, String &nombrePolinomio, int &resultado, Boolean &valida);
 #endif /* Parser_h */

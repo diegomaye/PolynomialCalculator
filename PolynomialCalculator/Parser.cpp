@@ -7,38 +7,6 @@
 
 #include "Parser.h"
 
-void invocarComando(Comando com, ListaStrings &lista, ABBPolinomios &polinomios) {
-    switch (com) {
-    case CREAR:
-        crearPolinomio(polinomios, lista);
-        break;
-    case SUMAR:
-        sumarPolinomios(polinomios, lista);
-        break;
-    case MULTIPLICAR:
-        multiplicarPolinomios(polinomios, lista);
-        break;
-    case EVALUAR:
-        evalarPolinomio(polinomios, lista);
-        break;
-    case ESRAIZ:
-        esraizPolinomio(polinomios, lista);
-        break;
-    case MOSTRAR:
-        mostrarPolinomio(polinomios, lista);
-        break;
-    case GUARDAR:
-        guardarPolinomio(polinomios, lista);
-        break;
-    case RECUPERAR:
-        recuperarPolinomio(polinomios, lista);
-        break;
-    case SALIR:
-        salir(polinomios);
-        break;
-    }
-}
-
 void crearPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
     String nombrePolinomio;
     strcrear(nombrePolinomio);
@@ -325,11 +293,28 @@ void guardarPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
             if(!existe){
                 print(mostrarError(FORMATO_ARCHIVO_INCORRECTO));
             } else {
-                Polinomio polinomio = buscarPolinomio(polinomios, nombrePolinomio);
-                bajarTerminosPolinomio(polinomio, nombreArchivo);
-                printf("Polinomio almacenado correctamente en ");
-                print(nombreArchivo);
-                printEnter();
+                if (existeArchivo(nombreArchivo)) {
+                    print(mostrarError(EXISTE_ARCHIVO));
+                    char sobreescribir;
+                    scanf("%c", &sobreescribir);
+                    if (sobreescribir == 'N' || sobreescribir == 'n')
+                        print(mostrarError(COMANDO_ABORTADO));
+                    else if (sobreescribir == 'S' || sobreescribir == 's') {
+                            Polinomio polinomio = buscarPolinomio(polinomios, nombrePolinomio);
+                            bajarTerminosPolinomio(polinomio, nombreArchivo);
+                            printf("Polinomio almacenado correctamente en ");
+                            print(nombreArchivo);
+                            printEnter();
+                    } else
+                        print(mostrarError(RESPUESTA_INCORRECTA));
+                } else {
+                    Polinomio polinomio = buscarPolinomio(polinomios, nombrePolinomio);
+                    bajarTerminosPolinomio(polinomio, nombreArchivo);
+                    printf("Polinomio almacenado correctamente en ");
+                    print(nombreArchivo);
+                    printEnter();
+                }
+
             }
         }
     }
@@ -400,30 +385,6 @@ void validarEvaluarEsRaiz(ABBPolinomios polinomios, ListaStrings comando, String
             }
         }
     }
-}
-
-Boolean sonNombreValidos(ListaStrings comando, String &nombrePolinomio1, String &nombrePolinomio2, String &nombreResultado){
-    strcrear(nombrePolinomio1);
-    Boolean nombreValidos = FALSE;
-    darStringEnPosicion(comando, 2, nombrePolinomio1);
-    if(!esAlfanumerico(nombrePolinomio1))
-        print(mostrarError(STRING_ALFANUMERICO1));
-    else {
-        strcrear(nombrePolinomio2);
-        darStringEnPosicion(comando, 3, nombrePolinomio2);
-        if(!esAlfanumerico(nombrePolinomio2))
-            print(mostrarError(STRING_ALFANUMERICO2));
-        else {
-            strcrear(nombreResultado);
-            darStringEnPosicion(comando, 1, nombreResultado);
-            if(!esAlfanumerico(nombreResultado))
-                print(mostrarError(STRING_ALFANUMERICO3));
-            else {
-                nombreValidos = TRUE;
-            }
-        }
-    }
-    return nombreValidos;
 }
 
 Boolean existen(ABBPolinomios arbol, String nombrePolinomio1, String nombrePolinomio2){

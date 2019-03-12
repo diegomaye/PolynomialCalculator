@@ -37,7 +37,9 @@ typedef enum {
     NOMBRE_EXTENSION_INCORRECTO,
     EXISTE_ARCHIVO,
     NO_EXISTE_ARCHIVO,
-    COMANDO_INGRESADO_NO_EXISTE
+    COMANDO_INGRESADO_NO_EXISTE,
+    COMANDO_ABORTADO,
+    RESPUESTA_INCORRECTA
 } Error;
 
 typedef struct { Error value; char * descripcion; } Mensaje;
@@ -63,9 +65,11 @@ const Mensaje listaErrores[] = {
     {POLINOMIO_NO_EXISTENTE_EN_MEMORIA, "No existe ningun polinomio en memoria.\n"},
     {FORMATO_ARCHIVO_INCORRECTO, "El formato del nombre del archivo no es correcto.\n"},
     {NOMBRE_EXTENSION_INCORRECTO, "El nombre o la extension no es correcto.\n"},
-    {EXISTE_ARCHIVO, "Desea sobreescribir el archivo?"},
+    {EXISTE_ARCHIVO, "Desea sobreescribir el archivo? Digite S o N\n"},
     {NO_EXISTE_ARCHIVO, "No existe un archivo en el disco con el nombre ingresado.\n"},
-    {COMANDO_INGRESADO_NO_EXISTE, "El comando ingresado es incorrecto.\n"}
+    {COMANDO_INGRESADO_NO_EXISTE, "El comando ingresado es incorrecto.\n"},
+    {COMANDO_ABORTADO, "Comando abortado.\n"},
+    {RESPUESTA_INCORRECTA, "Su respuesta no fue la correcta. Comando abortado.\n"}
 
 };
 

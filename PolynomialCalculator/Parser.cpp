@@ -350,15 +350,19 @@ void recuperarPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
                 String nombreArchivo;
                 strcrear(nombreArchivo);
                 darStringEnPosicion(comando, 2, nombreArchivo);
-                Boolean existe = existeArchivo(nombreArchivo);
-                if(!existe){
-                    print(mostrarError(NO_EXISTE_ARCHIVO));
-                } else {
-                    Polinomio polinomio;
-                    cargarPolinomio(polinomio, nombrePolinomio, NULL);
-                    levantarTerminosPolinomio(polinomio, nombreArchivo);
-                    insertarPolinomio(polinomios, polinomio);
-                    mostrarPolinomio(polinomio);
+                if (!validarExtension(nombreArchivo))
+                    print(mostrarError(NOMBRE_EXTENSION_INCORRECTO));
+                else {
+                    Boolean existe = existeArchivo(nombreArchivo);
+                    if(!existe){
+                        print(mostrarError(NO_EXISTE_ARCHIVO));
+                    } else {
+                        Polinomio polinomio;
+                        cargarPolinomio(polinomio, nombrePolinomio, NULL);
+                        levantarTerminosPolinomio(polinomio, nombreArchivo);
+                        insertarPolinomio(polinomios, polinomio);
+                        mostrarPolinomio(polinomio);
+                    }
                 }
             }
         }

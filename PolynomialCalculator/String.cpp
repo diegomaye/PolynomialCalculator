@@ -229,6 +229,8 @@ Boolean esNumerico(String s) // TODO: VERIFICAR TAMBIEN QUE PUEDA SER UN NUMERO 
     Boolean resultado=TRUE;
     if (s[i] == '-')
         i = 1;
+    else if (s[i] == '+')
+        i = 1;
     if (s[i] == VACIO)
         resultado = FALSE;
     while(s[i]!=VACIO && resultado)

@@ -32,8 +32,6 @@ void probarTodosMensajesDeError(){
     printEnter();
     print(mostrarError(CANTIDAD_PARAMETROS_MULTILICACION));
     printEnter();
-    print(mostrarError(POLINOMIOS_EXISTENTE_MULTIPLICACION));
-    printEnter();
     print(mostrarError(VALOR_PARA_EVALUAR));
     printEnter();
     print(mostrarError(RESULTADO_EVALUAR_ERROR));

@@ -15,7 +15,10 @@ void cargarPolinomio(Polinomio &polinomio, String nombre, ListaTerminos listTerm
 void mostrarPolinomio(Polinomio polinomio){
     print(polinomio.nombre);
     printf(" = ");
-    mostrarTerminos(polinomio.terminos);
+    if (polinomioNulo(polinomio))
+        printf("0");
+    else
+        mostrarTerminos(polinomio.terminos);
     printEnter();
 }
 

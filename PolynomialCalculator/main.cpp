@@ -12,15 +12,27 @@ int main() {
     String commando;
     ABBPolinomios polinomios;
     crearArbolPolinomios(polinomios);
-    printf("///////////////////////////////////////////////////////////////////////////\n");
-    printf("Bienvenido a PolynomialCalculator, con este sistema podras realizar crear\n");
-    printf("sumar, multiplicar y evaluar polinomios, asi como determinar si un numero\n");
-    printf("es raiz, en cualquier momento podras ver los polinomios en memoria, ademas\n");
-    printf("el sistema te permite almacenar los polinomios para utilizarlos en futuras\n");
-    printf("calculos. \n");
-    printf("///////////////////////////////////////////////////////////////////////////\n");
-    printf("Ingresa el comando:\n");
+    Boolean salirSistema = FALSE;
+    printf("///////////////////////////////////////////////////////////\n");
+    printf("      ____        __                            _       __\n");
+    printf("     / __ \\____  / __  ______  ____  ____ ___  (_____ _/ /\n");
+    printf("    / /_/ / __ \\/ / / / / __ \\/ __ \\/ __ `__ \\/ / __ `/ /\n");
+    printf("   / ____/ /_/ / / /_/ / / / / /_/ / / / / / / / /_/ / /\n");
+    printf("  /_/    \\____/_/\\__, /_/ /_/\\____/_/ /_/ /_/_/\\__,_/_/\n");
+    printf("     ______     /____/        __      __\n");
+    printf("    / ________ _/ _______  __/ ____ _/ /_____  _____\n");
+    printf("   / /   / __ `/ / ___/ / / / / __ `/ __/ __ \\/ ___/\n");
+    printf("  / /___/ /_/ / / /__/ /_/ / / /_/ / /_/ /_/ / /\n");
+    printf("  \\____/\\__,_/_/\\___/\\__,_/_/\\__,_/\\__/\\____/_/\n");
+    printf("\n");
+    printf("    Bienvenido a Polynomial Calculator, a continuacion se listan\n");
+    printf("los comando que pueden ser utilizandos, ingrese 'ayuda' para mas \n");
+    printf("informacion.\n");
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////\n");
+
     do{
+        printf("Ingresa el comando:\n");
         strcrear(commando);
         scan(commando);
         ListaStrings commandos;
@@ -44,10 +56,12 @@ int main() {
             guardarPolinomio(polinomios, commandos);
         } else if(strreq(commando, COMMANDO[RECUPERAR])){
             recuperarPolinomio(polinomios, commandos);
+        } else if(strreq(commando, COMMANDO[AYUDA])){
+            ayuda(polinomios, commandos);
         } else if(strreq(commando, COMMANDO[SALIR])){
-            salir(polinomios);
+            salirSistema = salir(polinomios, commandos);
         } else {
             print(mostrarError(COMANDO_INGRESADO_NO_EXISTE));
         }
-    } while (!strreq(commando, COMMANDO[SALIR]));
+    } while (!salirSistema);
 }

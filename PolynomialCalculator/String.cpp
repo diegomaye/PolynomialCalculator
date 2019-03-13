@@ -202,20 +202,24 @@ void fromString(String &s, FILE * f){
 }
 Boolean esAlfanumerico(String s)
 {
-    int i=0;
-    Boolean resultado=TRUE;
-
-    while(s[i] != VACIO && resultado)
-    {
-        if(((s[i] >= 'a')&&(s[i]<='z'))||((s[i] >= 'A')&&(s[i]<='Z'))||((s[i]>='0')&&(s[i]<='9')))
-         {
-            i++;
-         }
-        else
+    int i = 0;
+    Boolean resultado = TRUE;
+    if (strlar(s) == 0)
+        resultado = FALSE;
+    else {
+        while(s[i] != VACIO && resultado)
         {
-            resultado=FALSE;
+            if(((s[i] >= 'a')&&(s[i]<='z'))||((s[i] >= 'A')&&(s[i]<='Z'))||((s[i]>='0')&&(s[i]<='9')))
+             {
+                i++;
+             }
+            else
+            {
+                resultado = FALSE;
+            }
         }
     }
+
     return resultado;
 }
 
@@ -224,6 +228,8 @@ Boolean esNumerico(String s) // TODO: VERIFICAR TAMBIEN QUE PUEDA SER UN NUMERO 
     int i = 0;
     Boolean resultado=TRUE;
     if (s[i] == '-')
+        i = 1;
+    else if (s[i] == '+')
         i = 1;
     if (s[i] == VACIO)
         resultado = FALSE;

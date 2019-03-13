@@ -14,6 +14,11 @@
 #include "Polinomios.h"
 #include "ListaStrings.h"
 
+const String NO_MA = "N\0";
+const String NO_MI = "n\0";
+const String SI_MA = "S\0";
+const String SI_MI = "s\0";
+
 typedef enum {
     CREAR,
     SUMAR,

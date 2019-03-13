@@ -215,18 +215,28 @@ void guardarPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
             } else {
                 if (existeArchivo(nombreArchivo)) {
                     print(mostrarError(EXISTE_ARCHIVO));
-                    char sobreescribir;
-                    scanf("%c", &sobreescribir);
-                    if (sobreescribir == 'N' || sobreescribir == 'n')
-                        print(mostrarError(COMANDO_ABORTADO));
-                    else if (sobreescribir == 'S' || sobreescribir == 's') {
+                    String escritura;
+                    strcrear(escritura);
+                    scan(escritura);
+                    ListaStrings respuesta;
+                    crearListaString(respuesta);
+                    darListaSeparadaPorEspacios(escritura, respuesta);
+                    int elementosRespuesta = contarElementos(respuesta);
+                    if (elementosRespuesta != 1)
+                        print(mostrarError(RESPUESTA_INCORRECTA));
+                    else {
+                        darStringEnPosicion(respuesta, 0, escritura);
+						if (strreq(escritura, SI_MA) || strreq(escritura, SI_MI)) {
                             Polinomio polinomio = buscarPolinomio(polinomios, nombrePolinomio);
                             bajarTerminosPolinomio(polinomio, nombreArchivo);
                             printf("Polinomio almacenado correctamente en ");
                             print(nombreArchivo);
                             printEnter();
-                    } else
-                        print(mostrarError(RESPUESTA_INCORRECTA));
+                        } else if (strreq(escritura, NO_MA) || strreq(escritura, NO_MI))
+                                    print(mostrarError(COMANDO_ABORTADO));
+                                else
+									print(mostrarError(RESPUESTA_INCORRECTA));
+                    }
                 } else {
                     Polinomio polinomio = buscarPolinomio(polinomios, nombrePolinomio);
                     bajarTerminosPolinomio(polinomio, nombreArchivo);

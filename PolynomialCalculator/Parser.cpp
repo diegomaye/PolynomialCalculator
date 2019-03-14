@@ -326,6 +326,39 @@ void ayuda(ABBPolinomios &polinomios, ListaStrings comando) {
     }
 }
 
+void calcular(ABBPolinomios &polinomios, ListaStrings comando){
+    String nombrePolinomio;
+    strcrear(nombrePolinomio);
+    darStringEnPosicion(comando, 1, nombrePolinomio);
+    int elementos = contarElementos(comando);//Se saca el comando
+    if (elementos != 2)
+        print(mostrarError(CANTIDAD_PARAMETROS));
+    else if(!existePolinomioEnABB(polinomios, nombrePolinomio))
+            print(mostrarError(POLINOMIO_NO_EXISTENTE));
+    else{
+        Polinomio polinomio = buscarPolinomio(polinomios, nombrePolinomio);
+        int grado = darGradoPolinomio(polinomio);
+        if(grado > 2){
+            printf("El polinomio es de un grado mayor a 2.\n");
+        } else {
+            switch (grado) {
+                case 0:
+                    printf("El polinomio no tiene variables.\n");
+                    break;
+//                case 1:
+//                    int
+//                    break;
+//                case <#constant#>:
+//                    <#statements#>
+//                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    
+}
+
 Boolean salir(ABBPolinomios &polinomios, ListaStrings comando) {
     int elementos = contarElementos(comando);//Se saca el comando
     if (elementos != 1){

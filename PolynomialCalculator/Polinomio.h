@@ -32,6 +32,8 @@ int evaluarPolinomio(Polinomio polinomio, int evaluar);
  Para el caso del polinomio nulo devuelve 0*/
 Boolean esRaizPolinomio(Polinomio polinomio, int raiz);
 /*Devuelve TRUE si el valor ingresado en raiz devuelve 0 al ejecutar evaluarPolinomio, con el mismo polinomio y evaluar = resultado*/
+int darGradoPolinomio(Polinomio polinomio);
+/*Dar grado de polinomio*/
 void darNombrePolinomio(Polinomio polinomio, String &nombre);
 /*Dado un polinomio devuelve el nombre del mismo cargado en la variable nombre*/
 void darTerminosPolinomio(Polinomio polinomio, ListaTerminos &terminos);

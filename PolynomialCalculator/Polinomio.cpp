@@ -47,6 +47,14 @@ Boolean esRaizPolinomio(Polinomio polinomio, int raiz){//TODO: ver de eliminar
     return esRaizTerminos(polinomio.terminos, raiz);
 }
 
+int darGradoPolinomio(Polinomio polinomio){
+    ListaTerminos lstTerminos;
+    crearListaTerminos(lstTerminos);
+    darTerminosPolinomio(polinomio, lstTerminos);
+    Termino termino = primerTermino(lstTerminos);
+    return darExponenteTermino(termino);
+}
+
 void darNombrePolinomio(Polinomio polinomio, String &nombre){
     nombre = polinomio.nombre;
 }

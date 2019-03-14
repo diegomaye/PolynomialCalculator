@@ -58,6 +58,8 @@ int main() {
             recuperarPolinomio(polinomios, commandos);
         } else if(strreq(commando, COMMANDO[AYUDA])){
             ayuda(polinomios, commandos);
+        } else if(strreq(commando, COMMANDO[CALCULAR])){
+            calcular(polinomios, commandos);
         } else if(strreq(commando, COMMANDO[SALIR])){
             salirSistema = salir(polinomios, commandos);
         } else {

@@ -29,6 +29,7 @@ typedef enum {
     GUARDAR,
     RECUPERAR,
     AYUDA,
+    CALCULAR,
     SALIR
 } Comando;
 
@@ -43,6 +44,7 @@ static const String COMMANDO[] = {
     "guardar\0",
     "recuperar\0",
     "ayuda\0",
+    "calcular\0",
     "salir\0"
 };
 
@@ -70,6 +72,8 @@ void recuperarPolinomio(ABBPolinomios &polinomios, ListaStrings commando);
 /*dado un comando, recupera un archivo*/
 void ayuda(ABBPolinomios &polinomios, ListaStrings comando);
 /*muestra todos los comandos del sistema*/
+void calcular(ABBPolinomios &polinomios, ListaStrings comando);
+/*si el polinomio ingresado es de grado 1 o 2, calcula las raices del mismo*/
 Boolean salir(ABBPolinomios &polinomios, ListaStrings comando);
 /*dado un comando, se sale del prpgrama*/
 /*Funciones de soporte para validaciones*/

@@ -42,3 +42,6 @@ PolynomialCalculator.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChec
 PolynomialCalculator.xcodeproj/project.xcworkspace/xcuserdata/diegomaye.xcuserdatad/UserInterfaceState.xcuserstate
 PolynomialCalculator.xcodeproj/xcuserdata/diegomaye.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 PolynomialCalculator.xcodeproj/xcuserdata/diegomaye.xcuserdatad/xcschemes/xcschememanagement.plist
+
+#Text Files
+*.txt

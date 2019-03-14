@@ -25,9 +25,9 @@ int main() {
     printf("  / /___/ /_/ / / /__/ /_/ / / /_/ / /_/ /_/ / /\n");
     printf("  \\____/\\__,_/_/\\___/\\__,_/_/\\__,_/\\__/\\____/_/\n");
     printf("\n");
-    printf("    Bienvenido a Polynomial Calculator, a continuacion se listan\n");
-    printf("los comando que pueden ser utilizandos, ingrese 'ayuda' para mas \n");
-    printf("informacion.\n");
+    printf("    Bienvenido a Polynomial Calculator, el sitema permite crear\n");
+    printf("sumar, multiplicar, evaluar y guardar polinomios, ingrese 'ayuda'\n");
+    printf("para mas informacion sobre los comandos.\n");
     printf("\n");
     printf("///////////////////////////////////////////////////////////\n");
 

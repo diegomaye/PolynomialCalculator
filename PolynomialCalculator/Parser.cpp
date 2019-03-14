@@ -203,7 +203,9 @@ void guardarPolinomio(ABBPolinomios &polinomios, ListaStrings comando) {
     if (elementos != 2)
         print(mostrarError(CANTIDAD_PARAMETROS));
     else {
-        if(!existePolinomioEnABB(polinomios, nombrePolinomio))
+        if(!esAlfanumerico(nombrePolinomio))
+            print(mostrarError(STRING_ALFANUMERICO));
+        else if(!existePolinomioEnABB(polinomios, nombrePolinomio))
             print(mostrarError(POLINOMIO_NO_EXISTENTE));
         else{
             String nombreArchivo;

@@ -105,9 +105,12 @@ También serán eventualmente necesarias otras estructuras de datos auxiliares n
 En relación a la lectura e interpretación de los comandos, todo comando será inicialmente leído desde teclado y cargado en un string. Luego se realizará un procesamiento (habitualmente se llama parsing a dicho procesamiento) de ese string para determinar de qué comando se trata, si es sintácticamente correcto, y posteriormente ejecutar las acciones que correspondan al comando en cuestión. Cuanto más sofisticado sea el parsing, más positivamente será valorado el trabajo. Se sugiere particionar el proceso de parsing en las siguientes etapas (definiendo oportunamente los procedimientos y funciones que sean necesarios en cada caso):
 
 • Lectura del comando en un string.
+
 • Validación del comando ingresado, devolviendo como resultado si es o no sintácticamente
  erróneo, el tipo de comando en cuestión y los parámetros que correspondan.
+ 
 • Procesamiento del comando luego de haber sido validado, manipulando adecuadamente las
  estructuras de datos que sean pertinentes.
+ 
 
 Además del parsing, también se deberá definir los procedimientos y funciones necesarios para el procesamiento de todos los comandos, así como los módulos necesarios, distribuyendo adecuadamente todos los subprogramas entre ellos, respetando los criterios usuales de modularización
